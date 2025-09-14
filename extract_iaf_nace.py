@@ -4,7 +4,8 @@ import re
 from typing import Dict, List, Tuple
 
 PDF_PATH = "Codigo_NACE_sectoresema.pdf"
-OUTPUT_JSON = "sectores_iaf_completos.json"
+# Archivo de salida principal con mapeo IAF→NACE expandido y descripciones completas
+OUTPUT_JSON = "iaf_nace_mapeo_expandido.json"
 
 
 # Utilidades de normalización para mitigar errores comunes de OCR

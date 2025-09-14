@@ -15,7 +15,7 @@ Uso Rápido (CLI)
 - Salida en JSON:
   - `python -m iaf_nace_classifier.cli 47 --json`
 - Usar un mapeo propio:
-  - `python -m iaf_nace_classifier.cli 74.31 -m sectores_iaf_completos.json`
+  - `python -m iaf_nace_classifier.cli 74.31 -m iaf_nace_mapeo_expandido.json`
 
 Uso en Python (API)
 - Ejemplo:
@@ -28,7 +28,7 @@ Regenerar Datos desde el PDF
 - Ejecuta el extractor:
   - `python extract_iaf_nace.py`
 - Produce:
-  - `sectores_iaf_completos.json`: lista de sectores IAF con códigos NACE y descripciones completas expandidas a todos los subniveles.
+  - `iaf_nace_mapeo_expandido.json`: lista de sectores IAF con códigos NACE y descripciones completas expandidas a todos los subniveles.
   - `extract_log.txt`: métricas y advertencias de validación.
 
 Cómo Funciona el Extractor
@@ -65,7 +65,22 @@ Validación
 Limitaciones y Notas
 - Si el maquetado del PDF cambia, puede requerir ajustar la tolerancia vertical o reglas de encabezado.
 - El extractor está afinado para el documento incluido; en PDFs distintos, valida con `extract_log.txt`.
-- Puedes editar manualmente `sectores_iaf_completos.json` si necesitas ajustes puntuales.
+- Puedes editar manualmente `iaf_nace_mapeo_expandido.json` si necesitas ajustes puntuales.
 
 Créditos
 - Extracción basada en `PyMuPDF (fitz)`; clasificación implementada en puro Python.
+
+Servicio HTTP (curl)
+- Servidor (opcional) para exponer un endpoint HTTP:
+  - Requisitos: `pip install fastapi uvicorn`
+  - Ejecutar: `uvicorn api_server:app --reload`
+- Probar con curl:
+  - `curl 'http://127.0.0.1:8000/classify?code=24.46'`
+  - `curl -X POST 'http://127.0.0.1:8000/classify' -H 'Content-Type: application/json' -d '{"code":"47"}'`
+- Respuesta: JSON con `result` (IAF detectado) y `sector` (objeto con descripciones NACE expandidas).
+
+Instalar desde Git como API
+- Puedes importar el paquete directamente desde un clon local (modo editable):
+  - `pip install -e .`
+  - `from iaf_nace_classifier import load_mapping, classify_nace`
+- Si prefieres instalar desde el repositorio remoto (VCS), puedo añadir un `pyproject.toml` mínimo para empaquetar el módulo y habilitar `pip install git+https://...`. Pídemelo y lo agrego.

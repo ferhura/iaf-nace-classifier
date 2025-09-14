@@ -5,13 +5,14 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_JSON = REPO_ROOT / "sectores_iaf_completos.json"
+# Archivo JSON oficial generado por el extractor
+DEFAULT_JSON = REPO_ROOT / "iaf_nace_mapeo_expandido.json"
 
 
 def load_mapping(path: Optional[str | Path] = None) -> List[Dict[str, Any]]:
     """Load IAF–NACE mapping JSON.
 
-    If path is None, loads from `sectores_iaf_completos.json` at repo root.
+    If path is None, loads from `iaf_nace_mapeo_expandido.json` at repo root.
     Filters out obviously broken records (e.g., missing codigos_nace).
     """
     p = Path(path) if path else DEFAULT_JSON
@@ -104,4 +105,3 @@ def classify_nace(code: str, mapping: Optional[List[Dict[str, Any]]] = None) -> 
         "matched_pattern": pat,
         "nace_code": code_norm,
     }
-

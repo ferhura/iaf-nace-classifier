@@ -1,0 +1,152 @@
+[
+    {
+        "query": "fabricación de muebles de madera",
+        "category": "Manufacturing",
+        "expected_iaf": 23
+    },
+    {
+        "query": "fabricación de computadoras",
+        "category": "Manufacturing",
+        "expected_iaf": 19
+    },
+    {
+        "query": "venta de ropa",
+        "category": "Trade",
+        "expected_iaf": 29
+    },
+    {
+        "query": "construcción de edificios",
+        "category": "Construction",
+        "expected_iaf": 28
+    },
+    {
+        "query": "transporte de carga por carretera",
+        "category": "Transport",
+        "expected_iaf": 31
+    },
+    {
+        "query": "desarrollo de software",
+        "category": "IT",
+        "expected_iaf": 33
+    },
+    {
+        "query": "servicios de limpieza",
+        "category": "Services",
+        "expected_iaf": 35
+    },
+    {
+        "query": "cultivo de tomates",
+        "category": "Agriculture",
+        "expected_iaf": 1
+    },
+    {
+        "query": "restaurante de comida rápida",
+        "category": "Hospitality",
+        "expected_iaf": 30
+    },
+    {
+        "query": "consultoría legal",
+        "category": "Services",
+        "expected_iaf": 35
+    },
+    {
+        "query": "fabricación de cemento",
+        "category": "Manufacturing",
+        "expected_iaf": 16
+    },
+    {
+        "query": "instalación de fontanería",
+        "category": "Construction",
+        "expected_iaf": 28
+    },
+    {
+        "query": "reparación de automóviles",
+        "category": "Services",
+        "expected_iaf": 29
+    },
+    {
+        "query": "educación primaria",
+        "category": "Education",
+        "expected_iaf": 37
+    },
+    {
+        "query": "hospital general",
+        "category": "Health",
+        "expected_iaf": 38
+    },
+    {
+        "query": "fabricación de productos farmacéuticos",
+        "category": "Manufacturing",
+        "expected_iaf": 13
+    },
+    {
+        "query": "venta de materiales de construcción",
+        "category": "Trade",
+        "expected_iaf": 29
+    },
+    {
+        "query": "agencia de viajes",
+        "category": "Services",
+        "expected_iaf": 35
+    },
+    {
+        "query": "fabricación de calzado",
+        "category": "Manufacturing",
+        "expected_iaf": 4
+    },
+    {
+        "query": "edición de libros",
+        "category": "IT/Media",
+        "expected_iaf": 35
+    },
+    {
+        "query": "fabricación de maquinaria agrícola",
+        "category": "Manufacturing",
+        "expected_iaf": 18
+    },
+    {
+        "query": "recogida de basuras",
+        "category": "Services",
+        "expected_iaf": 39
+    },
+    {
+        "query": "fabricación de pan",
+        "category": "Manufacturing",
+        "expected_iaf": 3
+    },
+    {
+        "query": "hoteles y alojamientos",
+        "category": "Hospitality",
+        "expected_iaf": 30
+    },
+    {
+        "query": "servicios de seguridad privada",
+        "category": "Services",
+        "expected_iaf": 35
+    },
+    {
+        "query": "fabricación de juguetes",
+        "category": "Manufacturing",
+        "expected_iaf": 23
+    },
+    {
+        "query": "transporte aéreo de pasajeros",
+        "category": "Transport",
+        "expected_iaf": 31
+    },
+    {
+        "query": "actividades de contabilidad",
+        "category": "Services",
+        "expected_iaf": 35
+    },
+    {
+        "query": "fabricación de vidrio",
+        "category": "Manufacturing",
+        "expected_iaf": 15
+    },
+    {
+        "query": "pesca marina",
+        "category": "Agriculture",
+        "expected_iaf": 1
+    }
+]

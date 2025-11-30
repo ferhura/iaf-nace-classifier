@@ -1281,7 +1281,15 @@
     "nombre_iaf": "excepto Metales básicos y productos de metal fabricados",
     "codigos_nace": [
       "24",
+      "25",
+      "25.1",
+      "25.2",
+      "25.3",
       "25.4",
+      "25.5",
+      "25.6",
+      "25.7",
+      "25.9",
       "33.11"
     ],
     "exclusiones": [
@@ -1372,6 +1380,98 @@
       {
         "codigo": "24.54",
         "descripcion": "24.54 Fundición de otros metales no férreos\nEsta clase comprende:\n- la fundición de piezas de moldeo metálicas pesadas\n- la fundición de piezas de moldeo de metales preciosos\n- la fundición a presión de piezas de moldeo de metales no férreos"
+      },
+      {
+        "codigo": "25.1",
+        "descripcion": "25.1 Fabricación de elementos metálicos para la construcción"
+      },
+      {
+        "codigo": "25.11",
+        "descripcion": "25.11 Fabricación de estructuras metálicas y sus componentes"
+      },
+      {
+        "codigo": "25.12",
+        "descripcion": "25.12 Fabricación de carpintería metálica"
+      },
+      {
+        "codigo": "25.2",
+        "descripcion": "25.2 Fabricación de cisternas, grandes depósitos y contenedores de metal"
+      },
+      {
+        "codigo": "25.21",
+        "descripcion": "25.21 Fabricación de radiadores y calderas para calefacción central"
+      },
+      {
+        "codigo": "25.29",
+        "descripcion": "25.29 Fabricación de otras cisternas, grandes depósitos y contenedores de metal"
+      },
+      {
+        "codigo": "25.3",
+        "descripcion": "25.3 Fabricación de generadores de vapor, excepto calderas de calefacción central"
+      },
+      {
+        "codigo": "25.30",
+        "descripcion": "25.30 Fabricación de generadores de vapor, excepto calderas de calefacción central"
+      },
+      {
+        "codigo": "25.5",
+        "descripcion": "25.5 Forja, estampación y embutición de metales; metalurgia de polvos"
+      },
+      {
+        "codigo": "25.50",
+        "descripcion": "25.50 Forja, estampación y embutición de metales; metalurgia de polvos"
+      },
+      {
+        "codigo": "25.6",
+        "descripcion": "25.6 Tratamiento y revestimiento de metales; ingeniería mecánica por cuenta de terceros"
+      },
+      {
+        "codigo": "25.61",
+        "descripcion": "25.61 Tratamiento y revestimiento de metales"
+      },
+      {
+        "codigo": "25.62",
+        "descripcion": "25.62 Ingeniería mecánica por cuenta de terceros\nEsta clase comprende:\n- el afilado de herramientas y sierras\n- la soldadura, amolado, etc."
+      },
+      {
+        "codigo": "25.7",
+        "descripcion": "25.7 Fabricación de artículos de cuchillería y cubertería, herramientas y ferretería"
+      },
+      {
+        "codigo": "25.71",
+        "descripcion": "25.71 Fabricación de artículos de cuchillería y cubertería, herramientas de mano y ferretería general"
+      },
+      {
+        "codigo": "25.72",
+        "descripcion": "25.72 Fabricación de cerraduras y herrajes"
+      },
+      {
+        "codigo": "25.73",
+        "descripcion": "25.73 Fabricación de herramientas\nEsta clase comprende:\n- la fabricación de cuchillas y hojas cortantes para máquinas o aparatos mecánicos\n- la fabricación de herramientas de mano, como alicates, destornilladores, llaves, etc.\n- la fabricación de sierras y hojas de sierra\n- la fabricación de herramientas de corte en general (brocas, fresas, cuchillas)\n- la fabricación de útiles intercambiables para herramientas de mano, con o sin motor, o para máquinas herramienta: brocas, punzones, matrices, fresas, etc."
+      },
+      {
+        "codigo": "25.9",
+        "descripcion": "25.9 Fabricación de otros productos metálicos"
+      },
+      {
+        "codigo": "25.91",
+        "descripcion": "25.91 Fabricación de bidones y toneles de hierro o acero"
+      },
+      {
+        "codigo": "25.92",
+        "descripcion": "25.92 Fabricación de envases y embalajes metálicos ligeros"
+      },
+      {
+        "codigo": "25.93",
+        "descripcion": "25.93 Fabricación de productos de alambre, cadenas y muelles"
+      },
+      {
+        "codigo": "25.94",
+        "descripcion": "25.94 Fabricación de pernos y productos de tornillería"
+      },
+      {
+        "codigo": "25.99",
+        "descripcion": "25.99 Fabricación de otros productos metálicos n.c.o.p."
       },
       {
         "codigo": "33.11",
@@ -3876,6 +3976,10 @@
     "codigo_iaf": 39,
     "nombre_iaf": "Otros servicios sociales",
     "codigos_nace": [
+      "37",
+      "38.1",
+      "38.2",
+      "39",
       "63.9",
       "79",
       "90",
@@ -3887,6 +3991,54 @@
     ],
     "exclusiones": [],
     "descripcion_nace": [
+      {
+        "codigo": "37",
+        "descripcion": "37 Recogida y tratamiento de aguas residuales y alcantarillado\nEsta división comprende la explotación de sistemas de alcantarillado o instalaciones de tratamiento de aguas\nresiduales que recogen, tratan y eliminan las aguas residuales."
+      },
+      {
+        "codigo": "37.0",
+        "descripcion": "37.0 Recogida y tratamiento de aguas residuales"
+      },
+      {
+        "codigo": "37.00",
+        "descripcion": "37.00 Recogida y tratamiento de aguas residuales y alcantarillado\nEsta clase comprende:\n- la explotación de sistemas de alcantarillado o instalaciones de tratamiento de aguas residuales\n- la recogida y el transporte de aguas residuales domésticas o industriales de uno o varios usuarios, así como de\nagua de lluvia, por medio de redes de alcantarillado, colectores, tanques y otros medios de transporte (camiones de recogida de aguas residuales, etc.)\n- el vaciado y la limpieza de pozos negros y fosas sépticas, sumideros y pozos de alcantarillado; el mantenimiento\nde inodoros químicos\n- el tratamiento de aguas residuales (incluidas las aguas residuales humanas e industriales, agua de piscinas, etc.)\nmediante procesos físicos, químicos y biológicos, como la dilución, el cribado, el filtrado, la sedimentación, etc.\n- el mantenimiento y la limpieza de alcantarillas y desagües, incluido el desatasco de alcantarillas"
+      },
+      {
+        "codigo": "38.1",
+        "descripcion": "38.1 Recogida de residuos\nEste grupo comprende la recogida de residuos domésticos e industriales. Puede tratarse de la recogida de residuos\ndomésticos, residuos de plantas industriales y comerciales, residuos peligrosos y no peligrosos, escombros, etc."
+      },
+      {
+        "codigo": "38.11",
+        "descripcion": "38.11 Recogida de residuos no peligrosos\nEsta clase comprende:\n- la recogida de residuos sólidos no peligrosos (es decir, basura) dentro de una zona determinada\n- la recogida de materiales reciclables\n- la recogida de aceites y grasas usados\n- la recogida de residuos en papeleras en lugares públicos"
+      },
+      {
+        "codigo": "38.12",
+        "descripcion": "38.12 Recogida de residuos peligrosos\nEsta clase comprende la recogida de residuos peligrosos sólidos y no sólidos, es decir, materias explosivas,\noxidantes, inflamables, tóxicas, irritantes, nocivas, cancerígenas, corrosivas, infecciosas u otras sustancias y\npreparados nocivos para la salud humana y el medio ambiente. Puede conllevar también la identificación, el\ntratamiento, el envasado y el etiquetado de los residuos para su transporte."
+      },
+      {
+        "codigo": "38.2",
+        "descripcion": "38.2 Tratamiento y eliminación de residuos\nEste grupo comprende la eliminación y el tratamiento previo a la eliminación de diversas formas de residuos por\ndiferentes medios."
+      },
+      {
+        "codigo": "38.21",
+        "descripcion": "38.21 Tratamiento y eliminación de residuos no peligrosos\nEsta clase comprende la eliminación y el tratamiento previo a la eliminación de residuos sólidos o no sólidos no\npeligrosos:\n- la explotación de vertederos para la eliminación de residuos no peligrosos\n- la eliminación de residuos no peligrosos mediante combustión o incineración o por otros métodos, con o sin la\nproducción resultante de electricidad o vapor, compost, combustibles sustitutivos, biogás, cenizas u otros\nsubproductos para su posterior utilización, etc.\n- el tratamiento de residuos orgánicos para su eliminación"
+      },
+      {
+        "codigo": "38.22",
+        "descripcion": "38.22 Tratamiento y eliminación de residuos peligrosos\nEsta clase comprende la eliminación y el tratamiento previo a la eliminación de residuos peligrosos sólidos o no\nsólidos"
+      },
+      {
+        "codigo": "39",
+        "descripcion": "39 Actividades de descontaminación y otros servicios de gestión de residuos\nEsta división comprende la provisión de servicios de descontaminación, es decir, la limpieza de suelos y aguas\nsubterráneas contaminados en un lugar determinado, ya sea in situ o ex situ, utilizando métodos mecánicos,\nquímicos o biológicos."
+      },
+      {
+        "codigo": "39.0",
+        "descripcion": "39.0 Actividades de descontaminación y otros servicios de gestión de residuos"
+      },
+      {
+        "codigo": "39.00",
+        "descripcion": "39.00 Actividades de descontaminación y otros servicios de gestión de residuos\nEsta clase comprende:\n- la descontaminación de suelos y aguas subterráneas en el lugar de la contaminación, ya sea in situ o ex situ\n- la descontaminación de plantas o lugares industriales, incluidas las centrales nucleares y las zonas militares\n- la descontaminación y limpieza de aguas superficiales tras una contaminación accidental, por ejemplo, por\nacumulación de contaminantes o tras un vertido de petróleo\n- la limpieza de vertidos de petróleo y otros contaminantes en tierra, en aguas superficiales, en océanos y mares,\nincluidas las zonas costeras\n- la supresión de asbesto, pintura con plomo y otros materiales tóxicos\n- otras actividades especializadas de control de la contaminación"
+      },
       {
         "codigo": "63.9",
         "descripcion": "63.9 Otros servicios de información\nEste grupo comprende las actividades de las agencias de noticias y del resto de servicios de información.\nEste grupo no comprende:\n- las actividades de las bibliotecas y archivos (véase 91.01)"

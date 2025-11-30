@@ -1,11 +1,15 @@
 import fitz  # PyMuPDF
 import json
 import re
+from pathlib import Path
 from typing import Dict, List, Tuple
 
-PDF_PATH = "Codigo_NACE_sectoresema.pdf"
+# Rutas relativas al directorio raíz del proyecto
+REPO_ROOT = Path(__file__).resolve().parent.parent
+PDF_PATH = REPO_ROOT / "iaf_nace_classifier" / "data" / "Codigo_NACE_sectoresema.pdf"
 # Archivo de salida principal con mapeo IAF→NACE expandido y descripciones completas
-OUTPUT_JSON = "iaf_nace_mapeo_expandido.json"
+OUTPUT_JSON = REPO_ROOT / "iaf_nace_classifier" / "data" / "iaf_nace_mapeo_expandido.json"
+LOG_FILE = REPO_ROOT / "extract_log.txt"
 
 
 # Utilidades de normalización para mitigar errores comunes de OCR
@@ -387,7 +391,7 @@ def _escribir_log_validacion(sectores: List[dict], desc_map: Dict[str, str], war
         for f in faltantes:
             lines.append(f" - {f}")
 
-    with open("extract_log.txt", "w", encoding="utf-8") as f:
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
 

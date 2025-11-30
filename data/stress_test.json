@@ -1,0 +1,3486 @@
+[
+  {
+    "query": "bálsamos naturales",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Otros cultivos perennes",
+    "expected_iaf": 1
+  },
+  {
+    "query": "las actividades relacionadas con la inseminación artificial",
+    "expected_iaf": 1
+  },
+  {
+    "query": "el cultivo de algas comestibles",
+    "expected_iaf": 1
+  },
+  {
+    "query": "los servicios relacionados con la explotación forestal:",
+    "expected_iaf": 1
+  },
+  {
+    "query": "el cultivo de crustáceos, bivalvos, otros moluscos y otros animales de agua marina.",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la captura de ballenas",
+    "expected_iaf": 1
+  },
+  {
+    "query": "guisante de Angola",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Habas de soja",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Cultivo de caña de azúcar",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la producción de pieles para peletería, de pieles de reptiles y aves procedentes de la caza",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la explotación de viveros, salvo los viveros forestales",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la captura de animales acuáticos marinos: tortugas, ascidias y otros tunicados, erizos de mar, etc.",
+    "expected_iaf": 1
+  },
+  {
+    "query": "setas, trufas",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la producción de leche cruda de vaca o búfalo",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Pesca marina",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Explotación de camellos y otros camélidos",
+    "expected_iaf": 1
+  },
+  {
+    "query": "bayas silvestres",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Silvicultura y explotación forestal",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Cultivos perennes",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Pesca y acuicultura",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Caza, captura de animales y servicios relacionados con las mismas",
+    "expected_iaf": 1
+  },
+  {
+    "query": "Cultivo de hortalizas, raíces y tubérculos",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la cría de peces en agua marina, incluida la cría de peces marinos ornamentales",
+    "expected_iaf": 1
+  },
+  {
+    "query": "frutos secos",
+    "expected_iaf": 1
+  },
+  {
+    "query": "la extracción de yeso y anhidrita;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la preparación de la turba para mejorar su calidad o facilitar su transporte o almacenamiento",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción de azufre;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción de tierras colorantes, espato fluor y otros minerales valorados fundamentalmente como fuente de",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Actividades de apoyo a la extracción de petróleo y gas natural",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción de fosfatos naturales y sales de potasio naturales;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción de creta y dolomita no calcinada.",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Extracción de crudo de petróleo",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Actividades de apoyo a las industrias extractivas",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la obtención de hidrocarburos líquidos mediante licuefacción o pirólisis.",
+    "expected_iaf": 2
+  },
+  {
+    "query": "los servicios complementarios prestados por cuenta de terceros y requeridos para las actividades de extracción",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Extracción de minerales metálicos",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la trituración y molido de grava;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "perforaciones y sondeos en relación con la extracción de petróleo o gas.",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Extracción de piedra ornamental y para la construcción, piedra caliza, yeso, creta y pizarra",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Actividades de apoyo a otras industrias extractivas",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción, desbastado y troceado por aserrado de las piedras de talla y de construcción como mármol, granito,",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción de lignito (carbón fósil): la explotación de minas subterráneas o a cielo abierto, incluida la que se",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la extracción y el dragado de arena industrial, arena para la construcción y grava;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "las actividades de los servicios de los yacimientos de petróleo y gas natural prestados por cuenta de terceros:",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la trituración y molido de piedra ornamental y de construcción;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la recuperación de hulla a partir de polvo de antracita.",
+    "expected_iaf": 2
+  },
+  {
+    "query": "la licuefacción y regasificación de gas natural para su transporte, realizadas en la explotación minera;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "el drenaje y la separación de fracciones de hidrocarburos líquidos;",
+    "expected_iaf": 2
+  },
+  {
+    "query": "los servicios de extinción de incendios en yacimientos de petróleo y gas.",
+    "expected_iaf": 2
+  },
+  {
+    "query": "Elaboración de zumos de frutas y hortalizas",
+    "expected_iaf": 3
+  },
+  {
+    "query": "el triturado de maíz húmedo;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de alimentos de nutrición especial:",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la producción de bebidas no alcohólicas aromatizadas o azucaradas: limonada, naranjada, cola, bebidas de frutas,",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la fabricación de bebidas mezcladas con bebidas alcohólicas destiladas;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la fabricación de vinagre.",
+    "expected_iaf": 3
+  },
+  {
+    "query": "los alimentos destinados a combatir el desgaste causado por el esfuerzo muscular intenso, especialmente",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la mezcla de té y de hierba mate;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "harina de mostaza;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de pastillas de confitería.",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de otros sucedáneos de la mantequilla;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "Fabricación de pan y de productos frescos de panadería y pastelería",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de vino a partir de mosto concentrado.",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de gluten;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la producción de yogur;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la molienda de cereales: producción de harinas, grañones, sémolas o aglomerados (pellets) de trigo, centeno,",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de glucosa, jarabe de glucosa, maltosa, inulina, etc.;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "el pelado industrial de patatas.",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la producción de sucedáneos no lácteos de la leche y el queso",
+    "expected_iaf": 3
+  },
+  {
+    "query": "café molido;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "los alimentos dietéticos para fines médicos especiales;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de leche en polvo o concentrada, azucarada o sin azucarar;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la mezcla de bebidas alcohólicas destiladas;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de platos a base de hortalizas;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la elaboración de platos de carne;",
+    "expected_iaf": 3
+  },
+  {
+    "query": "la fabricación de revestimientos textiles para suelos:",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Fabricación de otros productos textiles de uso técnico e industrial",
+    "expected_iaf": 4
+  },
+  {
+    "query": "hilado y fabricación de filamento o hilo para tejer o coser, para su comercialización o para un tratamiento ulterior;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "el blanqueo y teñido de fibras textiles, hilos, tejidos y artículos textiles, incluidas las prendas de vestir;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de partes de los productos mencionados en esta clase",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Fabricación de otros productos textiles n.c.o.p.",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de guarniciones ornamentales: galones, borlas, pompones, etc.",
+    "expected_iaf": 4
+  },
+  {
+    "query": "espadado del lino;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "ropa de cama, mesa, baño y cocina;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Fabricación de artículos confeccionados con textiles, excepto prendas de vestir",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Confección de prendas de vestir, excepto de peletería",
+    "expected_iaf": 4
+  },
+  {
+    "query": "devanado y lavado de la seda;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de pieles de imitación obtenidas por tejido.",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de tejidos impregnados, bañados, recubiertos o estratificados con materias plásticas",
+    "expected_iaf": 4
+  },
+  {
+    "query": "acolchados, edredones, almohadones, pufes, almohadas, sacos de dormir, etc.;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Fabricación de telas no tejidas y artículos confeccionados con ellas, excepto prendas de vestir",
+    "expected_iaf": 4
+  },
+  {
+    "query": "abrigos, trajes, conjuntos, chaquetas, pantalones, faldas, etc.",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de tejidos de felpilla o chenilla, de toallería de tejido de rizo, de tejido de gasa, etc.;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la fabricación de cordones de zapatos de materias textiles",
+    "expected_iaf": 4
+  },
+  {
+    "query": "alfombras, moquetas, felpudos y esteras, baldosas",
+    "expected_iaf": 4
+  },
+  {
+    "query": "lonas, tiendas de campaña y otros artículos análogos de acampada, velas para embarcaciones, toldos, cubiertas",
+    "expected_iaf": 4
+  },
+  {
+    "query": "desuardado y carbonizado de la lana y teñido de vellones;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Confección de otras prendas de vestir de punto",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Fabricación de cuerdas, cordeles, bramantes y redes",
+    "expected_iaf": 4
+  },
+  {
+    "query": "la impermeabilización, el recuubrimiento, el engomado y la impregnación de prendas de vestir adquiridas;",
+    "expected_iaf": 4
+  },
+  {
+    "query": "Preparación, curtido y acabado del cuero; fabricación de artículos de marroquinería, viaje y de",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de artículos de guarnicionería y talabartería",
+    "expected_iaf": 5
+  },
+  {
+    "query": "Industria del cuero y del calzado",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de látigos y fustas",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de artículos de viaje, bolsos de mano y artículos semejantes de cuero natural, artificial o regenerado,",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de cueros agamuzados, apergaminados, acharolados y metalizados",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de polainas, botines y artículos similares",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de cuero artificial o regenerado",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de calzado de cualquier tipo y de cualquier material, producido mediante cualquier proceso, incluso el",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de partes de cuero del calzado: palas y sus componentes, suelas y plantillas, tacones, etc.",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de cordones de zapatos, de cuero",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de diversos artículos de cuero natural o de cuero artificial o regenerado: correas de transmisión,",
+    "expected_iaf": 5
+  },
+  {
+    "query": "Fabricación de artículos de marroquinería, viaje y de guarnicionería y talabartería",
+    "expected_iaf": 5
+  },
+  {
+    "query": "el raspado, tundido, despinzado, adobado, curtido, blanqueo y teñido de pieles y cueros sin depilar",
+    "expected_iaf": 5
+  },
+  {
+    "query": "Preparación, curtido y acabado del cuero; preparación y teñido de pieles",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de correas no metálicas para relojes de pulsera (p. ej., tela, cuero, plástico)",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la preparación, curtido, teñido y acabado de cueros y pieles",
+    "expected_iaf": 5
+  },
+  {
+    "query": "Fabricación de calzado",
+    "expected_iaf": 5
+  },
+  {
+    "query": "la fabricación de cajas, cajitas, jaulas, cilindros, urnas y envases similares de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de marcos para lienzos de pintura",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Fabricación de chapas y tableros de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "pulido, teñido, bañado, impregnado, reforzado (con forro de papel o tejido)",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de canillas, carretes y bobinas para hilos y artículos similares de madera torneada",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de tableros con filamentos orientados (OSB) y otros tableros de partículas;",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Aserrado y cepillado de la madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Industria de la madera y del corcho, excepto muebles; cestería y espartería",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de trenzas y artículos de materias trenzables: esteras, salvamanteles, pantallas, cajas, etc.",
+    "expected_iaf": 6
+  },
+  {
+    "query": "elaboración en forma de motivos",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de bloques para la fabricación de pipas",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Fabricación de otros productos de madera; artículos de corcho, cestería y espartería",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Fabricación de envases y embalajes de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de cajas, estuches y joyeros, y artículos similares de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "el aserrado y el cepillado de la madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de partes de madera para el calzado (p. ej., tacones y hormas)",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de otros artículos de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de bobinas de madera para cables",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de utensilios domésticos y de cocina de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de madera laminada encolada y madera de chapado laminada",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Fabricación de productos de madera, corcho, cestería y espartería",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de placas de parquet, tiras, etc. de madera, ensambladas en planchas",
+    "expected_iaf": 6
+  },
+  {
+    "query": "el secado de la madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de lana, harina y virutas de madera",
+    "expected_iaf": 6
+  },
+  {
+    "query": "la fabricación de tableros de fibras de densidad media (MDF) y otros trableros de fibras",
+    "expected_iaf": 6
+  },
+  {
+    "query": "Fabricación de papel y cartón",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de pasta de papel blanqueada, semiblanqueada o cruda mediante procedimientos mecánicos,",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de pasta papelera de borras de algodón",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de papel y cartón con vistas a un tratamiento industrial posterior",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Fabricación de otros artículos de papel y cartón",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de papel autocopiativo listo para su uso",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de sacos y bolsas de papel",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Fabricación de papeles pintados",
+    "expected_iaf": 7
+  },
+  {
+    "query": "vasos, platos y bandejas",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de tarjetas de papel o cartón para máquinas Jacquard",
+    "expected_iaf": 7
+  },
+  {
+    "query": "papel higiénico",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Industria del papel",
+    "expected_iaf": 7
+  },
+  {
+    "query": "pañuelos, toallas, servilletas",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Fabricación de pasta papelera",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de guata y artículos textiles de guata: compresas higiénicas, tampones, etc.",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de papel prensa y otro papel de impresión o escritura",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de embalajes de papel o cartón ondulados",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de papeles pintados y otros revestimientos similares para paredes, incluido el papel con un baño de",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Fabricación de pasta papelera, papel y cartón",
+    "expected_iaf": 7
+  },
+  {
+    "query": "el tratamiento ulterior de papel y cartón:",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de embalajes alveolares de pasta de papel para huevos y otros productos similares, etc.",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de otros embalajes de papel y cartón",
+    "expected_iaf": 7
+  },
+  {
+    "query": "toallitas para desmaquillar",
+    "expected_iaf": 7
+  },
+  {
+    "query": "la fabricación de sobres y tarjetas postales",
+    "expected_iaf": 7
+  },
+  {
+    "query": "compresas higiénicas y tampones, pañales para bebés",
+    "expected_iaf": 7
+  },
+  {
+    "query": "Edición de directorios y guías de direcciones postales",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de listas de direcciones postales",
+    "expected_iaf": 8
+  },
+  {
+    "query": "formularios",
+    "expected_iaf": 8
+  },
+  {
+    "query": "otros materiales impresos",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Edición de libros",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Edición de revistas",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de libros, folletos y publicaciones similares, incluida la edición de diccionarios y enciclopedias",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición online de estadísticas y otra información",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Actividades de grabación de sonido y edición musical",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Edición de libros, periódicos y otras actividades editoriales",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Otras actividades editoriales",
+    "expected_iaf": 8
+  },
+  {
+    "query": "edición de libros de audio",
+    "expected_iaf": 8
+  },
+  {
+    "query": "fotografías, grabados y postales",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de guías telefónicas",
+    "expected_iaf": 8
+  },
+  {
+    "query": "carteles, reproducciones de obras de arte",
+    "expected_iaf": 8
+  },
+  {
+    "query": "tarjetas de felicitación",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición (incluida la edición online) de:",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de atlas, mapas y planos",
+    "expected_iaf": 8
+  },
+  {
+    "query": "material publicitario",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de enciclopedias, etc. en CDROM",
+    "expected_iaf": 8
+  },
+  {
+    "query": "Edición de periódicos",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la edición de otros tipos de directorios y compilaciones, como jurisprudencia, vademécums farmacéuticos, etc.",
+    "expected_iaf": 8
+  },
+  {
+    "query": "la impresión de libros y folletos, cuadernos y partituras de música, mapas, atlas, carteles, catálogos, prospectos y",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la composición, la fotocomposición, la introducción de datos para preimpresión, incluido el escaneado y el",
+    "expected_iaf": 9
+  },
+  {
+    "query": "Reproducción de soportes grabados",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la reproducción, a partir de grabaciones originales, de programas y datos en discos y cintas",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la impresión en etiquetas (impresión litográfica, fotograbado, flexografía u otras)",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la preparación de ficheros de datos para aplicaciones multimedia (impresión en papel, CDROM, Internet)",
+    "expected_iaf": 9
+  },
+  {
+    "query": "soportes de presentación, por ejemplo transparencias y otras formas de presentación",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la encuadernación comercial, montaje de muestras y servicios de postimpresión de apoyo a las actividades de",
+    "expected_iaf": 9
+  },
+  {
+    "query": "bocetos, croquis, maquetas, etc.",
+    "expected_iaf": 9
+  },
+  {
+    "query": "Servicios de preimpresión y preparación de soportes",
+    "expected_iaf": 9
+  },
+  {
+    "query": "Encuadernación y servicios relacionados con la misma",
+    "expected_iaf": 9
+  },
+  {
+    "query": "los servicios de acabado para CDROM",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la impresión de otras publicaciones periódicas que se publican al menos cuatro veces por semana",
+    "expected_iaf": 9
+  },
+  {
+    "query": "Otras actividades de impresión y artes gráficas",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la encuadernación y el acabado de papel o cartón impresos mediante plegado, estampado, perforación, taladrado,",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la preparación de planchas y troqueles para la impresión o la estampación en relieve",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la preparación de:",
+    "expected_iaf": 9
+  },
+  {
+    "query": "el procesado de planchas: \"del ordenador a la plancha (\"computer to plate\" CTP) (incluidas las planchas de",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la preparación de cilindros: el grabado de cilindros de fotograbado",
+    "expected_iaf": 9
+  },
+  {
+    "query": "producción de pruebas",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la impresión de otras revistas y publicaciones periódicas que se publican menos de cuatro veces por semana",
+    "expected_iaf": 9
+  },
+  {
+    "query": "los servicios de acabado para la expedición de correspondencia, como la personalización y la preparación de",
+    "expected_iaf": 9
+  },
+  {
+    "query": "trabajos artísticos de carácter técnico, como la preparación bloques de madera o piedra para litografía",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la reproducción, a partir de grabaciones originales, de discos, discos compactos y cintas de películas u otras",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la impresión directa en textiles, plástico, vidrio, metal, madera y cerámica",
+    "expected_iaf": 9
+  },
+  {
+    "query": "la fabricación de briquetas combustibles de hulla y lignito",
+    "expected_iaf": 10
+  },
+  {
+    "query": "Refino de petróleo",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de productos para la industria petroquímica y para la elaboración de revestimientos de carreteras",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la explotación de coquerías",
+    "expected_iaf": 10
+  },
+  {
+    "query": "Coquerías",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de alquitranes de hulla y lignito en bruto",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de coque y semicoque",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de briquetas de turba",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de brea y coque de brea",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la aglomeración de coque",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de diversos productos: bencina mineral, vaselina, cera de parafina, petrolato, etc.",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de briquetas de petróleo",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la mezcla de biocombustibles, es decir, la mezcla de alcoholes con petróleo (p. ej., gasohol)",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de aceites o grasas lubricantes derivados del petróleo, incluso a partir de residuos de lubricantes",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de combustible para motores: gasolina, queroseno, etc.",
+    "expected_iaf": 10
+  },
+  {
+    "query": "Coquerías y refino de petróleo",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de gas de hulla en coquerías",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la producción de combustible: fueloil ligero, medio y pesado, gases de refinería como etano, propano, butano, etc.",
+    "expected_iaf": 10
+  },
+  {
+    "query": "la fabricación de ácidos inorgánicos excepto el ácido nítrico",
+    "expected_iaf": 11
+  },
+  {
+    "query": "el tostado de piritas de hierro",
+    "expected_iaf": 11
+  },
+  {
+    "query": "Procesamiento de combustibles nucleares",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fundición y el refinado de uranio",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fabricación de álcalis, lejías y otras bases inorgánicas excepto el amoníaco",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fabricación de agua destilada",
+    "expected_iaf": 11
+  },
+  {
+    "query": "el enriquecimiento de minerales de uranio y de torio",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fabricación de elementos químicos (excepto gases industriales y metales básicos)",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fabricación de otros compuestos inorgánicos",
+    "expected_iaf": 11
+  },
+  {
+    "query": "la fabricación de metal de uranio a partir de pechblenda u otros minerales",
+    "expected_iaf": 11
+  },
+  {
+    "query": "Fabricación de otros productos básicos de química inorgánica",
+    "expected_iaf": 11
+  },
+  {
+    "query": "resinas fenólicas, resinas de expóxido y poliuretano",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de abonos:",
+    "expected_iaf": 12
+  },
+  {
+    "query": "peptonas y sus derivados, otras materias proteicas y sus derivados n.c.o.p.",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de primeras materias plásticas:",
+    "expected_iaf": 12
+  },
+  {
+    "query": "Fabricación de productos químicos básicos, compuestos nitrogenados, fertilizantes, plásticos y",
+    "expected_iaf": 12
+  },
+  {
+    "query": "urea, fosfatos naturales en bruto y sales de potasio naturales en bruto",
+    "expected_iaf": 12
+  },
+  {
+    "query": "gases elementales",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de colorantes y pigmentos de cualquier origen, en forma básica o concentrada",
+    "expected_iaf": 12
+  },
+  {
+    "query": "hidrocarburos cíclicos, saturados y no saturados",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de tintas para escribir y dibujar",
+    "expected_iaf": 12
+  },
+  {
+    "query": "caucho sintético",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de fibras sintéticas o artificiales discontinuas, sin cardar, peinar ni tratadas de cualquier otra forma",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de mezclas de productos aromáticos para la elaboración de perfumes o alimentos",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de productos de limpieza y de abrillantamiento:",
+    "expected_iaf": 12
+  },
+  {
+    "query": "Fabricación de gases industriales",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de jabón cosmético",
+    "expected_iaf": 12
+  },
+  {
+    "query": "Fabricación de otros productos básicos de química orgánica",
+    "expected_iaf": 12
+  },
+  {
+    "query": "lustres y cremas para madera",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de caucho sintético en sus formas primarias:",
+    "expected_iaf": 12
+  },
+  {
+    "query": "Fabricación de pesticidas y otros productos agroquímicos",
+    "expected_iaf": 12
+  },
+  {
+    "query": "reactivos compuestos para diagnósticos y laboratorios",
+    "expected_iaf": 12
+  },
+  {
+    "query": "lustres para carrocerías de automóviles, cristales y metales",
+    "expected_iaf": 12
+  },
+  {
+    "query": "la fabricación de papel, guata, fieltro, etc., revestidos o recubiertos con jabón o detergente",
+    "expected_iaf": 12
+  },
+  {
+    "query": "lustres y cremas para cuero",
+    "expected_iaf": 12
+  },
+  {
+    "query": "productos para la depilación",
+    "expected_iaf": 12
+  },
+  {
+    "query": "medicamentos diversos, incluidos los preparados homeopáticos",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la producción de sustancias medicinales activas utilizadas por sus propiedades farmacológicas en la fabricación de",
+    "expected_iaf": 13
+  },
+  {
+    "query": "Fabricación de productos farmacéuticos",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de productos farmacéuticos biotecnológicos",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de guatas, gasas, vendas, apósitos, etc. medicinales impregnados",
+    "expected_iaf": 13
+  },
+  {
+    "query": "Fabricación de productos farmacéuticos de base",
+    "expected_iaf": 13
+  },
+  {
+    "query": "el tratamiento de la sangre",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de azúcares químicamente puros",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la preparación de productos botánicos (trituración, cribado, molido) para uso farmacéutico",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de preparados químicos contraceptivos de uso externo y medicamentos contraceptivos a base de",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de sustancias radioactivas para el diagnóstico en vivo",
+    "expected_iaf": 13
+  },
+  {
+    "query": "antisueros y otras fracciones sanguíneas",
+    "expected_iaf": 13
+  },
+  {
+    "query": "el procesado de glándulas y la fabricación de extractos glandulares, etc.",
+    "expected_iaf": 13
+  },
+  {
+    "query": "Fabricación de especialidades farmacéuticas",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de medicamentos:",
+    "expected_iaf": 13
+  },
+  {
+    "query": "la fabricación de preparados para el diagnóstico médico, incluidas las pruebas de embarazo",
+    "expected_iaf": 13
+  },
+  {
+    "query": "Fabricación de productos de caucho",
+    "expected_iaf": 14
+  },
+  {
+    "query": "revestimientos de caucho para rodillos",
+    "expected_iaf": 14
+  },
+  {
+    "query": "globos inflables",
+    "expected_iaf": 14
+  },
+  {
+    "query": "artículos de plástico de uso sanitario como bañeras, platos de ducha, lavabos, tazas de inodoro, cisternas, etc.",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de productos semielaborados de materias plásticas:",
+    "expected_iaf": 14
+  },
+  {
+    "query": "tubos, conductos y mangueras",
+    "expected_iaf": 14
+  },
+  {
+    "query": "revestimientos de plástico para suelos, paredes o techos en rollos o en forma de losetas, etc.",
+    "expected_iaf": 14
+  },
+  {
+    "query": "cintas transportadoras o de transmisión",
+    "expected_iaf": 14
+  },
+  {
+    "query": "planchas, hojas, bandas, varillas, perfiles",
+    "expected_iaf": 14
+  },
+  {
+    "query": "placas, planchas, bloques, películas, láminas, bandas, etc. de plástico (autoadhesivo o no)",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de colchones de caucho para camas de agua",
+    "expected_iaf": 14
+  },
+  {
+    "query": "Fabricación de neumáticos y cámaras de caucho; reconstrucción y recauchutado de neumáticos",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de artículos sexuales de caucho",
+    "expected_iaf": 14
+  },
+  {
+    "query": "Fabricación de placas, hojas, tubos y perfiles de plástico",
+    "expected_iaf": 14
+  },
+  {
+    "query": "Fabricación de productos de plástico",
+    "expected_iaf": 14
+  },
+  {
+    "query": "cubiertas macizas o huecas",
+    "expected_iaf": 14
+  },
+  {
+    "query": "tubos, conductos y mangueras de plástico, accesorios para tuberías y mangueras",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de cepillos de caucho",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de bandas de rodadura intercambiables, bandas de fondo de llanta, bandas de rodadura para el",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de trajes de buceo y baño de caucho",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de revestimientos de suelos resistentes, como vinilo, linóleo, etc.",
+    "expected_iaf": 14
+  },
+  {
+    "query": "Fabricación de otros productos de caucho",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de productos acabados de plástico:",
+    "expected_iaf": 14
+  },
+  {
+    "query": "la fabricación de piedra artificial (por ejemplo, mármol artificial)",
+    "expected_iaf": 14
+  },
+  {
+    "query": "tanques, depósitos",
+    "expected_iaf": 14
+  },
+  {
+    "query": "Fabricación de artículos cerámicos de uso doméstico y ornamental",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación de otros productos minerales no metálicos n.c.o.p.",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de aisladores de vidrio y accesorios aislantes de vidrio",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de otros aparatos cerámicos",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de productos cerámicos refractarios:",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de vidrio plano, incluido el vidrio armado, coloreado o tintado",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de artículos de asfalto y de materiales similares, como, por ejemplo, adhesivos a base de asfalto,",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación de aparatos sanitarios cerámicos",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación y manipulado de otro vidrio, incluido el vidrio técnico",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de cristales para relojes, vidrio óptico y elementos de éste no trabajados ópticamente",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de vidrio plano endurecido o laminado",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Manipulado y transformación de vidrio plano",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de baldosas y adoquines cerámicos no refractarios",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de estatuillas y otros artículos cerámicos de ornamentación",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación de azulejos y baldosas de cerámica",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de aisladores de vidrio de varias capas",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de productos cerámicos n.c.o.p.",
+    "expected_iaf": 15
+  },
+  {
+    "query": "productos cerámicos para aislamiento térmico fabricados con harinas fósiles silíceas",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de ampollas y envolturas de vidrio para lámparas",
+    "expected_iaf": 15
+  },
+  {
+    "query": "el corte, tallado y acabado de la piedra para su empleo en la construcción, cementerios, carreteras, tejados, etc.",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación de productos abrasivos",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de vidrio en forma de varillas o tubos",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de vajillas y otros artículos cerámicos de uso doméstico o de tocador",
+    "expected_iaf": 15
+  },
+  {
+    "query": "Fabricación de vidrio y productos de vidrio",
+    "expected_iaf": 15
+  },
+  {
+    "query": "la fabricación de materiales de fricción y artículos sin montar similares con una base de sustancias minerales o de",
+    "expected_iaf": 15
+  },
+  {
+    "query": "estatuas, mobiliario, altorrelieves y bajorrelieves, jarrones, jardineras, etc.",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de artículos de asbestocemento o fibrocemento de celulosa y similares:",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de elementos de yeso y escayola para la construcción:",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de mortero",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de elementos de hormigón, cemento y yeso",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de materiales de construcción de materias vegetales (lana de madera, paja, cañas, juncos)",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de otros productos de hormigón, yeso y cemento",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de yesos para enlucir a partir de yeso calcinado y sulfato calcinado",
+    "expected_iaf": 16
+  },
+  {
+    "query": "planchas, placas, paneles, etc.",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de cemento, cal y yeso",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de clinker y cementos hidráulicos, incluidos el portland, el cemento aluminoso, el cemento de",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de otros productos de hormigón, yeso, cemento y piedra artificial:",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de fibrocemento",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de cal y yeso",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de cal viva, cal apagada y cal hidráulica",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de cemento",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de hormigón fresco",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de morteros en polvo",
+    "expected_iaf": 16
+  },
+  {
+    "query": "placas onduladas, otras placas, paneles, tejas, tubos, tuberías, depósitos, abrevaderos, lavabos, fregaderos,",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de dolomita calcinada",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de elementos de hormigón para la construcción",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de mezclas preparadas y secas para hormigón y mortero",
+    "expected_iaf": 16
+  },
+  {
+    "query": "baldosas, losas, ladrillos, planchas, paneles, tuberías, postes, etc.",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de elementos de yeso para la construcción",
+    "expected_iaf": 16
+  },
+  {
+    "query": "la fabricación de elementos premoldeados de hormigón, cemento o piedra artificial para la construcción:",
+    "expected_iaf": 16
+  },
+  {
+    "query": "Fabricación de productos básicos de hierro, acero y ferroaleaciones",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación y el mantenimiento de reactores nucleares, excepto separadores de isótopos",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la producción de cinc, plomo y estaño mediante refinado electrolítico de los desechos y chatarra de cinc, plomo y",
+    "expected_iaf": 17
+  },
+  {
+    "query": "Fabricación de elementos metálicos para la construcción",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la producción de chapados de platino y de metales del grupo del platino sobre oro, plata o metales comunes",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fundición de piezas de moldeo de hierro",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fundición de piezas de moldeo de metales ligeros",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la primera transformación del aluminio",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la producción de cinc, plomo y estaño a partir de minerales",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación y el mantenimiento de tubos y tuberías",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fundición de productos semielaborados de aluminio, magnesio, titanio, cinc, etc.",
+    "expected_iaf": 17
+  },
+  {
+    "query": "Fabricación de cerraduras y herrajes",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la explotación de altos hornos, convertidores de acero, talleres de laminado y de acabado",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación de bidones y toneles de acero",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fabricación de juntas de soldadura, como codos y reducciones, mediante la forja de tubos de acero sin soldadura",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación y el mantenimiento de armas de fuego y munición (incluida la reparación de armas para actividades",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fundición de piezas de moldeo de metales preciosos",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación y el mantenimiento de carros de supermercado",
+    "expected_iaf": 17
+  },
+  {
+    "query": "Fabricación de artículos de cuchillería y cubertería, herramientas y ferretería",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fabricación de tubos y tuberías soldados de un diámetro externo de 406,4 mm o menos de sección transversal",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fundición de productos semielaborados de hierro",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la reparación y el mantenimiento de generadores de vapor de agua y otros generadores de vapor",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la fabricación de laminados de metales preciosos",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la producción de chapados de oro sobre metales comunes o plata",
+    "expected_iaf": 17
+  },
+  {
+    "query": "la producción y refinado de metales preciosos forjados o no: oro, plata, platino, etc. a partir de mineral o chatarra",
+    "expected_iaf": 17
+  },
+  {
+    "query": "lavadoras y secadoras industriales",
+    "expected_iaf": 18
+  },
+  {
+    "query": "sierras de cadena",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de maquinaria para la impresión textil",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de maquinaria para la preparación de alimentos en hoteles y restaurantes",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de equipos para soldadura no eléctrica",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la reparación de válvulas",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de bombas para líquidos, estén o no equipados con un dispositivo de medición",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la reparación y el mantenimiento de maquinaria para la industria metalúrgica",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de mecanismos de lanzamiento de aeronaves, catapultas de portaviones y equipos afines",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la instalación de otros equipos industriales, por ejemplo:",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la reparación y el mantenimiento de maquinaria para la industria del plástico y el caucho",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de aparatos eléctricos para calefacción de montaje permanente, calentadores eléctricos para piscinas",
+    "expected_iaf": 18
+  },
+  {
+    "query": "máquinas de clavadoras accionadas mediante pólvora",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de prensas y trituradoras para la elaboración de vino, sidra y zumos de frutas",
+    "expected_iaf": 18
+  },
+  {
+    "query": "ejes y manivelas de transmisión: ejes de levas, cigüeñales, etc.",
+    "expected_iaf": 18
+  },
+  {
+    "query": "convertidores, lingoteras, calderos de colada y máquinas de colar y moldear",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de partes especializadas para maquinaria de elevación y manipulación",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de municiones de guerra",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la reparación de herramientas manuales eléctricas",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la reparación de órganos mecánicos de transmisión",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de embragues y acoplamientos axiales",
+    "expected_iaf": 18
+  },
+  {
+    "query": "máquinas para limpiar, separar y clasificar huevos, frutas, etc.",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de maquinaria para la industria textil:",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de dispositivos divisores y otros dispositivos especiales para máquinas herramienta",
+    "expected_iaf": 18
+  },
+  {
+    "query": "la fabricación de tractores empleados en la agricultura y en la silvicultura",
+    "expected_iaf": 18
+  },
+  {
+    "query": "Fabricación de aparatos de distribución y control eléctrico",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de radares",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de equipos de comunicación portátiles",
+    "expected_iaf": 19
+  },
+  {
+    "query": "Reparación de equipos eléctricos",
+    "expected_iaf": 19
+  },
+  {
+    "query": "terminales informáticos especializados",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de cable de fibra óptica para la transmisión de datos y de imágenes en directo",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de transformadores de distribución eléctricos",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de soportes para disco duro",
+    "expected_iaf": 19
+  },
+  {
+    "query": "Reparación de equipos de comunicación",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de ordenadores portátiles",
+    "expected_iaf": 19
+  },
+  {
+    "query": "lectores de tarjetas inteligentes",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de lámparas de mesa",
+    "expected_iaf": 19
+  },
+  {
+    "query": "Fabricación de productos electrónicos de consumo",
+    "expected_iaf": 19
+  },
+  {
+    "query": "Reparación de ordenadores y equipos periféricos",
+    "expected_iaf": 19
+  },
+  {
+    "query": "escáneres, incluidos los lectores de códigos de barras",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de equipos de limpieza por ultrasonido (excepto de laboratorio y odontológicos)",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de cables e hilos aislados realizados en acero, cobre, aluminio",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de instrumentos para motores de aviación",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de baterías de hidruro de niquel metal",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de pilas secas",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de unidades de disco magnéticas, unidades de memoria flash y otros dispositivos de almacenamiento",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de troncos de chimenea eléctricos",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de linternas",
+    "expected_iaf": 19
+  },
+  {
+    "query": "afeitadoras eléctricas, cepillos de dientes eléctricos y otros aparatos eléctricos de higiene personal",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la fabricación de baterías de níquelcadmio",
+    "expected_iaf": 19
+  },
+  {
+    "query": "la construcción de pesqueros y buquesfactoría",
+    "expected_iaf": 20
+  },
+  {
+    "query": "canoas, kayaks, embarcaciones de remos, botes, etc.",
+    "expected_iaf": 20
+  },
+  {
+    "query": "buques de pasajeros, transbordadores, buques cargueros, buques cisterna, remolcadores, etc.",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la reparación y el mantenimiento de embarcaciones de recreo",
+    "expected_iaf": 20
+  },
+  {
+    "query": "Reparación y mantenimiento naval",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de buques de uso comercial:",
+    "expected_iaf": 20
+  },
+  {
+    "query": "diques flotantes, pontones, embarcaderos flotantes, boyas, tanques flotantes, gabarras, barcazas, grúas flotantes,",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de plataformas de perforación flotantes o sumergibles",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de veleros con o sin motor auxiliar",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de otras embarcaciones de recreo y de deporte:",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de aerodeslizadores (excepto aerodeslizadores de recreo)",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la reparación y el mantenimiento rutinario de barcos",
+    "expected_iaf": 20
+  },
+  {
+    "query": "Construcción naval",
+    "expected_iaf": 20
+  },
+  {
+    "query": "Construcción de embarcaciones de recreo y deporte",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la fabricación de botes y balsas inflables",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de buques de guerra",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de aerodeslizadores de recreo",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la construcción de embarcaciones de motor",
+    "expected_iaf": 20
+  },
+  {
+    "query": "la fabricación de motos acuáticas",
+    "expected_iaf": 20
+  },
+  {
+    "query": "motores de uso aeronáutico",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la fabricación de asientos para aeronaves",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la construcción de dirigibles y globos de aire caliente",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la reparación y el mantenimiento de motores de aviación",
+    "expected_iaf": 21
+  },
+  {
+    "query": "componentes de turborreactores y turbohélices para aeronaves",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la reparación y el mantenimiento de aeronaves (a excepción de la transformación, la revisión o la reconstrucción en",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la fabricación de misiles balísticos intercontinentales",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la construcción de planeadores, alas delta",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la construcción de naves espaciales y sus vehículos de lanzamiento, satélites, sondas planetarias, estaciones",
+    "expected_iaf": 21
+  },
+  {
+    "query": "Reparación y mantenimiento aeronáutico y espacial",
+    "expected_iaf": 21
+  },
+  {
+    "query": "hélices de uso aeronáutico, rotores de helicópteros y palas para rotores",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la construcción de helicópteros",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la construcción de aeronaves para el transporte de mercancías o pasajeros o para fines militares, deportivos u",
+    "expected_iaf": 21
+  },
+  {
+    "query": "elementos principales tales como fuselajes, alas, puertas, tableros de mando, trenes de aterrizaje, depósitos de",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la revisión o transformación de aeronaves y motores de aeronaves",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la fabricación de piezas y accesorios de aeronaves de esta clase:",
+    "expected_iaf": 21
+  },
+  {
+    "query": "la fabricación de aparatos para prácticas de vuelo en tierra",
+    "expected_iaf": 21
+  },
+  {
+    "query": "Construcción aeronáutica y espacial y su maquinaria",
+    "expected_iaf": 21
+  },
+  {
+    "query": "Fabricación de vehículos de motor",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de motocicletas, ciclomotores y vehículos similares equipados con motor",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de otros vehículos de motor:",
+    "expected_iaf": 22
+  },
+  {
+    "query": "Fabricación de bicicletas y de vehículos para personas con discapacidad",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de piezas especiales para locomotoras y otro material rodante:",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la construcción de material rodante no autopropulsado para ferrocarril y tranvía:",
+    "expected_iaf": 22
+  },
+  {
+    "query": "bogies, ejes y ruedas, frenos y sus componentes, ganchos y demás dispositivos de enganche, topes y sus",
+    "expected_iaf": 22
+  },
+  {
+    "query": "Fabricación de locomotoras y material ferroviario",
+    "expected_iaf": 22
+  },
+  {
+    "query": "Fabricación de equipos eléctricos y electrónicos para vehículos de motor",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de vehículos, con o sin motor, para discapacitados",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de diversas piezas y accesorios para vehículos de motor:",
+    "expected_iaf": 22
+  },
+  {
+    "query": "frenos, cajas de cambios, ejes, ruedas, amortiguadores de suspensión, radiadores, silenciadores, tubos de",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la construcción de coches de viajeros, vagones y furgones autopropulsados para ferrocarril y tranvía, así como de",
+    "expected_iaf": 22
+  },
+  {
+    "query": "furgonetas, camiones, cabezas tractoras (de uso en carretera) para semirremolques, etc.",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de asientos para vagones ferroviarios",
+    "expected_iaf": 22
+  },
+  {
+    "query": "cinturones de seguridad, airbags, puertas, parachoques",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la reparación y el mantenimiento de locomotoras y vagones ferroviarios (excepto las tareas de reconstrucción o",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la reparación de calesas y carros de tracción animal",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la construcción de locomotoras eléctricas, diésel, de vapor y de otros tipos para ferrocarril",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de asientos para vehículos",
+    "expected_iaf": 22
+  },
+  {
+    "query": "Fabricación de otros componentes, piezas y accesorios para vehículos de motor",
+    "expected_iaf": 22
+  },
+  {
+    "query": "mototrineos, vehículos para campos de golf, vehículos anfibios",
+    "expected_iaf": 22
+  },
+  {
+    "query": "el equipamiento exterior de todo tipo de vehículos de motor, remolques y semirremolques",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de vehículos de tracción animal: sulkys, carretas, carruajes, etc.",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de chasis para vehículos de motor",
+    "expected_iaf": 22
+  },
+  {
+    "query": "la fabricación de ropa de protección para la extinción de incendios",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de artículos de joyería de metales preciosos, o de metales comunes chapados con metales",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de órganos de tubos, armonios y otros instrumentos similares de teclado y lengüetas metálicas libres",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de esterilizadores de laboratorio",
+    "expected_iaf": 23
+  },
+  {
+    "query": "los acabados de muebles, como lacado, pintado, barnizado con muñequilla y tapizado",
+    "expected_iaf": 23
+  },
+  {
+    "query": "tablas de vela y de surf",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de piezas y accesorios de instrumentos:",
+    "expected_iaf": 23
+  },
+  {
+    "query": "Industrias manufactureras n.c.o.p.",
+    "expected_iaf": 23
+  },
+  {
+    "query": "colchones de caucho celular sin cubrir o de materias plásticas",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de botones, corchetes, cierres automáticos, broches, cierres de cremallera",
+    "expected_iaf": 23
+  },
+  {
+    "query": "artículos de joyería que contienen piedras de imitación, como gemas y diamantes de imitación, y similares",
+    "expected_iaf": 23
+  },
+  {
+    "query": "anillos, pulseras, collares y artículos similares de joyería fabricados de metales comunes chapados con metales",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de juegos de mesa y similares",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de muebles de dormitorio, salón, jardín, etc.",
+    "expected_iaf": 23
+  },
+  {
+    "query": "mesas de reconocimiento",
+    "expected_iaf": 23
+  },
+  {
+    "query": "aparatos de gimnasia, musculación y atletismo",
+    "expected_iaf": 23
+  },
+  {
+    "query": "pelotas duras, blandas e hinchables",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de sábanas quirúrgicas e hilos y gasas estériles",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de monedas, incluida las de curso legal, de metales preciosos o no preciosos",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de máscaras de gas",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de instrumentos de cuerda con teclado, incluidos los pianos automáticos",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de correas de relojes de metal (excepto metales preciosos)",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de cinturones de suspensión y otros cinturones para uso profesional",
+    "expected_iaf": 23
+  },
+  {
+    "query": "Fabricación de artículos de joyería y artículos similares",
+    "expected_iaf": 23
+  },
+  {
+    "query": "la fabricación de artículos de uso técnico y de laboratorio elaborados con metales preciosos (excepto instrumentos",
+    "expected_iaf": 23
+  },
+  {
+    "query": "Separación y clasificación de materiales",
+    "expected_iaf": 24
+  },
+  {
+    "query": "otros métodos de tratamiento mecánico, como el corte y la compresión para reducir el volumen",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la clasificación y prensado de plásticos para producir materias primas secundarias para tubos, tiestos, paletas y",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la transformación de otros residuos procedentes de alimentos, bebidas y tabaco en materias primas secundarias",
+    "expected_iaf": 24
+  },
+  {
+    "query": "Valorización de materiales ya clasificados",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la trituración, lavado y clasificación de otros residuos, como los de demolición, para obtener materias primas",
+    "expected_iaf": 24
+  },
+  {
+    "query": "Valorización",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la trituración de residuos de metal, vehículos para desguace, etc.",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la recuperación del caucho, por ejemplo, neumáticos usados, para producir materias primas secundarias",
+    "expected_iaf": 24
+  },
+  {
+    "query": "el procesado de aceites y grasas usados para cocinar para su transformación en materias primas secundarias",
+    "expected_iaf": 24
+  },
+  {
+    "query": "el molido mecánico de los residuos metálicos procedentes de vehículos usados, lavadoras, bicicletas, etc.",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la transformación (limpieza, fundición, trituración) de residuos de plástico o caucho en granulos",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la trituración, lavado y clasificación de vidrio",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la regeneración de metales a partir de los residuos fotográficos, por ejemplo, del baño fijador o las películas y el",
+    "expected_iaf": 24
+  },
+  {
+    "query": "la reducción mecánica de grandes piezas de hierro, como vagones de ferrocarril",
+    "expected_iaf": 24
+  },
+  {
+    "query": "Distribución de energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "Comercio de energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "Producción de energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "Producción, transporte y distribución de energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la explotación de las redes de distribución (que constan de líneas, torres, contadores y cableado) que transportan la",
+    "expected_iaf": 25
+  },
+  {
+    "query": "las actividades de los intermediarios de la energía eléctrica que gestionan la venta de energía eléctrica a través de",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la venta al usuario de la energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la explotación de los mercados de electricidad y capacidad de transporte para energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "Transporte de energía eléctrica",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la explotación de las instalaciones de generación de energía eléctrica, incluidas las energías térmica, nuclear,",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la explotación de los sistemas de transporte de la energía eléctrica desde la instalación de generación a la red de",
+    "expected_iaf": 25
+  },
+  {
+    "query": "la venta de gas al usuario por tuberías",
+    "expected_iaf": 26
+  },
+  {
+    "query": "Distribución por tubería de combustibles gaseosos",
+    "expected_iaf": 26
+  },
+  {
+    "query": "Comercio de gas por tubería",
+    "expected_iaf": 26
+  },
+  {
+    "query": "las actividades de los intermediarios de gas que gestionan la venta de gas a través de las redes de distribución",
+    "expected_iaf": 26
+  },
+  {
+    "query": "Producción de gas",
+    "expected_iaf": 26
+  },
+  {
+    "query": "la explotación de los mercados de gas y capacidad de transporte para combustibles gaseosos",
+    "expected_iaf": 26
+  },
+  {
+    "query": "la producción de gas con fines de suministro de gas por carbonación de hulla o a partir de subproductos agrícolas o",
+    "expected_iaf": 26
+  },
+  {
+    "query": "la distribución y el suministro de combustibles gaseosos de cualquier tipo por un sistema de tuberías",
+    "expected_iaf": 26
+  },
+  {
+    "query": "la producción de combustibles gaseosos de valor calórico específico, mediante purificación, mezcla y otros",
+    "expected_iaf": 26
+  },
+  {
+    "query": "Producción de gas; distribución por tubería de combustibles gaseosos",
+    "expected_iaf": 26
+  },
+  {
+    "query": "Suministro de vapor y aire acondicionado",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la purificación de aguas para el suministro de agua",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la producción y distribución de agua fría con fines de refrigeración",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la producción y distribución de aire refrigerado",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la distribución de agua por tuberías, realizada en camión u otros medios",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la captación de agua de ríos, lagos, pozos, etc.",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la explotación de canales de riego",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la producción de hielo, incluyendo tanto para consumo humano como con otros fines (por ejemplo, refrigeración)",
+    "expected_iaf": 27
+  },
+  {
+    "query": "el tratamiento de aguas para uso industrial y otros usos",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la desalinización de agua de mar o de aguas subterráneas para obtener agua como producto principal",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la producción, captación y distribución de vapor y agua caliente para calefacción, energía u otros fines",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la captación de agua de lluvia",
+    "expected_iaf": 27
+  },
+  {
+    "query": "Captación, depuración y distribución de agua",
+    "expected_iaf": 27
+  },
+  {
+    "query": "la colocación en edificios y otras obras de construcción de:",
+    "expected_iaf": 28
+  },
+  {
+    "query": "Construcción de edificios",
+    "expected_iaf": 28
+  },
+  {
+    "query": "plantas de tratamiento de aguas residuales",
+    "expected_iaf": 28
+  },
+  {
+    "query": "las perforaciones, sondeos y muestreos para la construcción, geofísicos, geológicos u otros fines similares",
+    "expected_iaf": 28
+  },
+  {
+    "query": "alarmas contra incendios",
+    "expected_iaf": 28
+  },
+  {
+    "query": "hornos, torres de refrigeración",
+    "expected_iaf": 28
+  },
+  {
+    "query": "revestimientos de moqueta y linóleo para suelos, incluidos los de caucho y plástico",
+    "expected_iaf": 28
+  },
+  {
+    "query": "el montaje in situ de construcciones prefabricadas",
+    "expected_iaf": 28
+  },
+  {
+    "query": "alumbrado y señales eléctricas en calles",
+    "expected_iaf": 28
+  },
+  {
+    "query": "parqué y otros revestimientos de madera para paredes y suelos",
+    "expected_iaf": 28
+  },
+  {
+    "query": "curvado del acero",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la construcción de:",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la construcción de autopistas, calles, carreteras y otras vías de circulación de vehículos y peatones",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la limpieza de nuevos edificios tras su construcción",
+    "expected_iaf": 28
+  },
+  {
+    "query": "canales navegables, puertos, obras fluviales, puertos deportivos, esclusas, etc.",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la instalación de cocinas, armarios empotrados, escaleras, mobiliario para tiendas y similares",
+    "expected_iaf": 28
+  },
+  {
+    "query": "Acabado de edificios",
+    "expected_iaf": 28
+  },
+  {
+    "query": "colectores no eléctricos de energía solar",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la perforación de pozos hidráulicos",
+    "expected_iaf": 28
+  },
+  {
+    "query": "el alquiler de grúas y otros equipos de construcción que no pueden asignarse a un tipo de construcción específico,",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la construcción de cubiertas",
+    "expected_iaf": 28
+  },
+  {
+    "query": "sistemas de aspersión automática contra incendios",
+    "expected_iaf": 28
+  },
+  {
+    "query": "revestimientos de terrazo, mármol, granito o pizarra para paredes y suelos",
+    "expected_iaf": 28
+  },
+  {
+    "query": "puertas automáticas y giratorias",
+    "expected_iaf": 28
+  },
+  {
+    "query": "antenas parabólicas",
+    "expected_iaf": 28
+  },
+  {
+    "query": "la venta al por menor de motocicletas y de sus repuestos y accesorios por Internet",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio al por menor de otros productos en puestos de venta y en mercadillos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio al por mayor de ordenadores, equipos periféricos y programas informáticos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de otro material eléctrico como motores eléctricos y transformadores",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de productos químicos industriales:",
+    "expected_iaf": 29
+  },
+  {
+    "query": "las reparaciones mayores y la alteración de equipos de transporte excluidos los vehículos de motor (véase el",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de bicicletas y sus repuestos y accesorios",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de máquinas cortacésped de todos los tipos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de tejidos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio de repuestos y accesorios de vehículos de motor",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de semiconductores",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio al por menor de muebles, aparatos de iluminación y otros artículos de uso doméstico en",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de minerales metálicos férreos y no férreos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio al por menor por correspondencia o Internet",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Comercio al por menor de alfombras, moquetas y revestimientos de paredes y suelos en",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de productos de primera transformación de la madera",
+    "expected_iaf": 29
+  },
+  {
+    "query": "las actividades de los que estén dedicados a poner en contacto a compradores y vendedores o emprendan",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de herramientas como martillos, sierras, destornilladores y otras herramientas manuales",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por menor de máquinas cortacésped de cualquier tipo",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de circuitos impresos",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por mayor de instrumentos y equipo de medida",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por menor de artículos de madera, corcho y cestería",
+    "expected_iaf": 29
+  },
+  {
+    "query": "el comercio al por menor de material fotográfico, óptico y de precisión",
+    "expected_iaf": 29
+  },
+  {
+    "query": "la reparación y arreglo de prendas de vestir",
+    "expected_iaf": 29
+  },
+  {
+    "query": "las reparaciones eléctricas",
+    "expected_iaf": 29
+  },
+  {
+    "query": "Otros servicios de comidas",
+    "expected_iaf": 30
+  },
+  {
+    "query": "carritos ambulantes de comida",
+    "expected_iaf": 30
+  },
+  {
+    "query": "restaurantes",
+    "expected_iaf": 30
+  },
+  {
+    "query": "la provisión de alojamiento en campings, campamentos para caravanas, campamentos recreativos y campamentos",
+    "expected_iaf": 30
+  },
+  {
+    "query": "pensiones y casas de huéspedes",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Servicios de alojamiento",
+    "expected_iaf": 30
+  },
+  {
+    "query": "aparthoteles",
+    "expected_iaf": 30
+  },
+  {
+    "query": "cervecerías",
+    "expected_iaf": 30
+  },
+  {
+    "query": "albergues juveniles y refugios de montaña",
+    "expected_iaf": 30
+  },
+  {
+    "query": "albergues para trabajadores",
+    "expected_iaf": 30
+  },
+  {
+    "query": "vendedores ambulantes de bebidas",
+    "expected_iaf": 30
+  },
+  {
+    "query": "la provisión de espacio e instalaciones para vehículos recreativos",
+    "expected_iaf": 30
+  },
+  {
+    "query": "casas de campo y cabañas sin servicios de limpieza y similares",
+    "expected_iaf": 30
+  },
+  {
+    "query": "discobares y discopubs (donde la actividad predominante es servir bebidas)",
+    "expected_iaf": 30
+  },
+  {
+    "query": "vendedores de helados en carrito",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Hoteles y alojamientos similares",
+    "expected_iaf": 30
+  },
+  {
+    "query": "lugares que ofrecen comida para llevar",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Restaurantes y puestos de comidas",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Servicios de comidas y bebidas",
+    "expected_iaf": 30
+  },
+  {
+    "query": "apartamentos y bungalows",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Provisión de comidas preparadas para eventos",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Alojamientos turísticos y otros alojamientos de corta estancia",
+    "expected_iaf": 30
+  },
+  {
+    "query": "complejos turísticos",
+    "expected_iaf": 30
+  },
+  {
+    "query": "Otros alojamientos",
+    "expected_iaf": 30
+  },
+  {
+    "query": "bares de copas",
+    "expected_iaf": 30
+  },
+  {
+    "query": "las actividades de las agencias de transporte de mercancías por mar y por aire",
+    "expected_iaf": 31
+  },
+  {
+    "query": "el transporte de mercancías por ferrocarril usando redes de vías de larga distancia, así como por vías de corta",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Transporte terrestre y por tubería",
+    "expected_iaf": 31
+  },
+  {
+    "query": "el transporte aéreo no regular de mercancías",
+    "expected_iaf": 31
+  },
+  {
+    "query": "la compra de acceso y capacidad de red concedida por los propietarios y operadores de las redes, así como la",
+    "expected_iaf": 31
+  },
+  {
+    "query": "el lanzamiento de satélites y vehículos espaciales",
+    "expected_iaf": 31
+  },
+  {
+    "query": "los servicios de prevención y extinción de incendios en aeropuertos",
+    "expected_iaf": 31
+  },
+  {
+    "query": "las actividades relacionadas con el transporte marítimo y fluvial de pasajeros, animales o mercancías:",
+    "expected_iaf": 31
+  },
+  {
+    "query": "el alquiler de medios de transporte aéreo con piloto para transporte de pasajeros",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Transporte aéreo de mercancías y transporte espacial",
+    "expected_iaf": 31
+  },
+  {
+    "query": "actividades generales de aviación, como:",
+    "expected_iaf": 31
+  },
+  {
+    "query": "transporte de animales",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Otras actividades de telecomunicaciones",
+    "expected_iaf": 31
+  },
+  {
+    "query": "todos los servicios de transporte de mercancías por carretera:",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Transporte aéreo de mercancías",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Depósito y almacenamiento",
+    "expected_iaf": 31
+  },
+  {
+    "query": "la explotación de autobuses escolares y autobuses para el transporte de empleados",
+    "expected_iaf": 31
+  },
+  {
+    "query": "la provisión de telefonía y acceso a Internet en instalaciones abiertas al público",
+    "expected_iaf": 31
+  },
+  {
+    "query": "el transporte de pasajeros realizada por aeroclubes con fines de instrucción o de recreo",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Transporte de mercancías por ferrocarril",
+    "expected_iaf": 31
+  },
+  {
+    "query": "la recogida, la clasificación, el transporte y la reparto (nacional o internacional) de correspondencia y pequeños",
+    "expected_iaf": 31
+  },
+  {
+    "query": "otro transporte de pasajeros por carretera",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Servicios de mudanza",
+    "expected_iaf": 31
+  },
+  {
+    "query": "la organización de remesas individuales o de grupos (incluidas la recogida y el reparto de las mercancías y la",
+    "expected_iaf": 31
+  },
+  {
+    "query": "Actividades postales y de correos",
+    "expected_iaf": 31
+  },
+  {
+    "query": "edificios no residenciales, incluidos salas de exposición, almacenes y centros comerciales",
+    "expected_iaf": 32
+  },
+  {
+    "query": "la intermediación en operaciones con contratos de productos básicos",
+    "expected_iaf": 32
+  },
+  {
+    "query": "vehículos ferroviarios",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Alquiler de otra maquinaria, equipos y bienes tangibles n.c.o.p.",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Actividades de alquiler",
+    "expected_iaf": 32
+  },
+  {
+    "query": "el alquiler de máquinas y equipos para oficina, sin operario:",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Otras actividades auxiliares a seguros y fondos de pensiones",
+    "expected_iaf": 32
+  },
+  {
+    "query": "maquinaria y equipos usados por aficionados o como “hobby”, por ejemplo, herramientas para reparaciones",
+    "expected_iaf": 32
+  },
+  {
+    "query": "entidades patentadas",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Intermediación monetaria",
+    "expected_iaf": 32
+  },
+  {
+    "query": "el alquiler de contenedores",
+    "expected_iaf": 32
+  },
+  {
+    "query": "joyería, instrumentos musicales, atrezzo y vestuario de teatro",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Evaluación de riesgos y daños",
+    "expected_iaf": 32
+  },
+  {
+    "query": "las operaciones en los mercados financieros por cuenta de terceros (por ejemplo, corredores de bolsa) y otras",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Actividades auxiliares a los servicios financieros y a los seguros",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Otros servicios financieros, excepto seguros y fondos de pensiones",
+    "expected_iaf": 32
+  },
+  {
+    "query": "los servicios de fideicomisarios, fiduciarios y de custodia prestados por cuenta de terceros",
+    "expected_iaf": 32
+  },
+  {
+    "query": "mobiliario, objetos de cerámica y cristal, utensilios de cocina y servicio de mesa, electrodomésticos, menaje",
+    "expected_iaf": 32
+  },
+  {
+    "query": "el alquiler de los siguientes tipos de vehículos:",
+    "expected_iaf": 32
+  },
+  {
+    "query": "actividades de sociedades especializadas en convenios de liquidación por adelantado (viatical settlements)",
+    "expected_iaf": 32
+  },
+  {
+    "query": "las casas de empeños y prestamistas",
+    "expected_iaf": 32
+  },
+  {
+    "query": "la parcelación de terrenos, sin mejora de los mismos",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Alquiler de medios de navegación",
+    "expected_iaf": 32
+  },
+  {
+    "query": "ordenadores y periféricos",
+    "expected_iaf": 32
+  },
+  {
+    "query": "el alquiler de maquinaria y equipo para construcción e ingeniería civil sin operarios:",
+    "expected_iaf": 32
+  },
+  {
+    "query": "Edición de programas informáticos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Proceso de datos, hosting y actividades relacionadas; portales web",
+    "expected_iaf": 33
+  },
+  {
+    "query": "aplicaciones informáticas (incluidos los parches y las actualizaciones)",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la explotación de otros sitios web que actúan como portales para Internet, como los sitios de los medios de",
+    "expected_iaf": 33
+  },
+  {
+    "query": "personalización de programas informáticos, es decir, la modificación y configuración de una aplicación existente",
+    "expected_iaf": 33
+  },
+  {
+    "query": "bases de datos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "páginas web",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la explotación de sitios web que utilizan un motor de búsqueda para generar y mantener amplias bases de datos de",
+    "expected_iaf": 33
+  },
+  {
+    "query": "los servicios de recuperación de desastres informáticos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la edición de juegos de ordenador para todo tipo de plataforma",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la prestación de servicios de aplicaciones",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la generación de informes especializados a partir de los datos suministrados por los clientes",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Programación, consultoría y otras actividades relacionadas con la informática",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Gestión de recursos informáticos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Edición de otros programas informáticos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "hosting de aplicaciones",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la edición de programas informáticos estándar (no personalizados), incluida la traducción o adaptación a un",
+    "expected_iaf": 33
+  },
+  {
+    "query": "la instalación (montaje) de ordenadores personales",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Actividades de programación informática",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Edición de videojuegos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "los servicios de instalación de programas informáticos.",
+    "expected_iaf": 33
+  },
+  {
+    "query": "aplicaciones empresariales y de otro tipo",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Proceso de datos, hosting y actividades relacionadas",
+    "expected_iaf": 33
+  },
+  {
+    "query": "Otros servicios relacionados con las tecnologías de la información y la informática",
+    "expected_iaf": 33
+  },
+  {
+    "query": "los servicios de entrada de datos",
+    "expected_iaf": 33
+  },
+  {
+    "query": "las pruebas con modelos a escala o simuladores (p. ej., aeronaves, embarcaciones, presas, etc.)",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la realización de estudios geodésicos:",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la certificación de productos, incluidos bienes de consumo, vehículos motorizados, aeronaves, contenedores",
+    "expected_iaf": 34
+  },
+  {
+    "query": "Investigación y desarrollo experimental en ciencias naturales y técnicas",
+    "expected_iaf": 34
+  },
+  {
+    "query": "análisis de fallos",
+    "expected_iaf": 34
+  },
+  {
+    "query": "el asesoramiento sobre medio ambiente",
+    "expected_iaf": 34
+  },
+  {
+    "query": "Servicios técnicos de arquitectura",
+    "expected_iaf": 34
+  },
+  {
+    "query": "investigación y desarrollo en ciencias agrícolas",
+    "expected_iaf": 34
+  },
+  {
+    "query": "investigación y desarrollo en ciencias naturales",
+    "expected_iaf": 34
+  },
+  {
+    "query": "las actividades de los intermediarios de patentes (preparación de la compra y venta de patentes)",
+    "expected_iaf": 34
+  },
+  {
+    "query": "los laboratorios de positivado e impresión fotográfica",
+    "expected_iaf": 34
+  },
+  {
+    "query": "las actividades de los intermediarios comerciales, como la preparación de operaciones mercantiles de compra y",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la producción de fotografías comerciales y profesionales:",
+    "expected_iaf": 34
+  },
+  {
+    "query": "investigación y desarrollo en ingeniería y tecnología",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la grabación en vídeo de acontecimientos como bodas, reuniones, etc.",
+    "expected_iaf": 34
+  },
+  {
+    "query": "las pruebas acústicas y de vibración",
+    "expected_iaf": 34
+  },
+  {
+    "query": "los estudios geofísicos, geológicos o sísmicos",
+    "expected_iaf": 34
+  },
+  {
+    "query": "proteínas y otras moléculas: secuenciación, síntesis e ingeniería de proteínas y péptidos (que incluye hormonas de",
+    "expected_iaf": 34
+  },
+  {
+    "query": "elaboración y realización de proyectos relativos a ingeniería eléctrica y electrónica, de minas, química, mecánica,",
+    "expected_iaf": 34
+  },
+  {
+    "query": "Otras actividades profesionales, científicas y técnicas",
+    "expected_iaf": 34
+  },
+  {
+    "query": "Actividades de fotografía",
+    "expected_iaf": 34
+  },
+  {
+    "query": "las actividades de previsión meteorológica",
+    "expected_iaf": 34
+  },
+  {
+    "query": "explotación de laboratorios policiales",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la decoración de interiores",
+    "expected_iaf": 34
+  },
+  {
+    "query": "la proyección de edificios y la delineación",
+    "expected_iaf": 34
+  },
+  {
+    "query": "las actividades de búsqueda, selección y colocación de personal, incluida la colocación o búsqueda de ejecutivos",
+    "expected_iaf": 35
+  },
+  {
+    "query": "Actividades de contabilidad, teneduría de libros, auditoría y asesoría fiscal",
+    "expected_iaf": 35
+  },
+  {
+    "query": "las actividades de las agencias y oficinas de casting de actores, como las agencias de casting teatral",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la representación de los medios de comunicación: la venta o reventa de tiempo y espacio publicitarios en los",
+    "expected_iaf": 35
+  },
+  {
+    "query": "las actividades de desinfección, desratización y desinsectación",
+    "expected_iaf": 35
+  },
+  {
+    "query": "los servicios complementarios de secretaría",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la mecanografía y el tratamiento de textos",
+    "expected_iaf": 35
+  },
+  {
+    "query": "Otras actividades de limpieza industrial y de edificios",
+    "expected_iaf": 35
+  },
+  {
+    "query": "las actividades de limpieza especializada de edificios, como la limpieza de ventanas, chimeneas, hogares de",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la limpieza interior de camiones y buques cisterna",
+    "expected_iaf": 35
+  },
+  {
+    "query": "el embalaje de paquetes y la envoltura de regalos",
+    "expected_iaf": 35
+  },
+  {
+    "query": "otras actividades complementarias que suelen prestarse a las empresas y que no se han clasificado en otros",
+    "expected_iaf": 35
+  },
+  {
+    "query": "las actividades de envasado y empaquetado por cuenta de terceros, con intervención o no de procesos",
+    "expected_iaf": 35
+  },
+  {
+    "query": "el asesoramiento y la representación en acciones civiles",
+    "expected_iaf": 35
+  },
+  {
+    "query": "el asesoramiento en marketing",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la creación y realización de campañas publicitarias:",
+    "expected_iaf": 35
+  },
+  {
+    "query": "Actividades de las agencias de cobros y de información comercial",
+    "expected_iaf": 35
+  },
+  {
+    "query": "Actividades de las agencias de colocación",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la limpieza de trenes, autobuses, aviones, etc.",
+    "expected_iaf": 35
+  },
+  {
+    "query": "las oficinas administrativas centralizadas",
+    "expected_iaf": 35
+  },
+  {
+    "query": "la distribución o entrega de material publicitario o de muestras",
+    "expected_iaf": 35
+  },
+  {
+    "query": "otras actividades de limpieza n.c.o.p.",
+    "expected_iaf": 35
+  },
+  {
+    "query": "Limpieza general de edificios",
+    "expected_iaf": 35
+  },
+  {
+    "query": "los servicios de recuperación de bienes impagados",
+    "expected_iaf": 35
+  },
+  {
+    "query": "servicios de identificación de huellas dactilares",
+    "expected_iaf": 35
+  },
+  {
+    "query": "comercio al por mayor y al por menor",
+    "expected_iaf": 36
+  },
+  {
+    "query": "ordenación territorial",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración, supervisión y funcionamiento de la defensa y de las fuerzas armadas de tierra, mar y aire, como:",
+    "expected_iaf": 36
+  },
+  {
+    "query": "transportes",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Administración Pública y defensa; Seguridad Social obligatoria",
+    "expected_iaf": 36
+  },
+  {
+    "query": "los ejércitos de tierra, mar y aire",
+    "expected_iaf": 36
+  },
+  {
+    "query": "el abastecimiento de suministros para su utilización en situaciones de emergencia en territorio nacional causadas",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Regulación de la actividad económica y contribución a su mayor eficiencia",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Prestación de servicios a la comunidad en general",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración y supervisión de asuntos fiscales:",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración tributaria",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración de programas de vivienda",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la concesión de becas públicas a artistas",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Actividades generales de la Administración Pública",
+    "expected_iaf": 36
+  },
+  {
+    "query": "recursos energéticos y mineros",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Regulación de las actividades sanitarias, educativas y culturales y otros servicios sociales, excepto",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración y gestión de cuerpos de bomberos regulares y auxiliares, encargados de la prevención y",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la asistencia sanitaria al personal militar en campaña",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración de servicios de recolección y eliminación de residuos",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la obtención y recepción de fondos y la fiscalización de su gasto",
+    "expected_iaf": 36
+  },
+  {
+    "query": "Orden público y seguridad",
+    "expected_iaf": 36
+  },
+  {
+    "query": "las fuerzas auxiliares y de reserva",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la concesión de ayuda económica a terceros países, esté o no canalizada a través de organizaciones",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la administración de las políticas de investigación y desarrollo y de los fondos pertinentes para mejorar los",
+    "expected_iaf": 36
+  },
+  {
+    "query": "medio ambiente",
+    "expected_iaf": 36
+  },
+  {
+    "query": "la formación para socorristas",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las escuelas de pilotaje, navegación y vela que no conceden certificados ni permisos profesionales",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la educación preprimaria (educación que precede al primer nivel). La educación preprimaria se define como la",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la formación religiosa",
+    "expected_iaf": 37
+  },
+  {
+    "query": "formación para chefs, hoteleros y gerentes de restaurante",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación primaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las escuelas de fotografía (excepto las profesionales)",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las clases de informática",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación postsecundaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Actividades auxiliares a la educación",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la educación técnica y profesional de nivel inferior a la educación superior, tal y como se define en 85.4.",
+    "expected_iaf": 37
+  },
+  {
+    "query": "el primer, segundo y tercer ciclo de la educación terciaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación cultural",
+    "expected_iaf": 37
+  },
+  {
+    "query": "los cursos de repaso para exámenes profesionales",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las clases de técnicas de supervivencia",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las escuelas de teatro (excepto las académicas)",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación postsecundaria no terciaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la educación secundaria general de nivel más alto, que da en principio acceso a la educación superior.",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la educación secundaria general de nivel más bajo, que corresponde aproximadamente a la escolaridad obligatoria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las clases de técnicas de lectura rápida",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación secundaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "la prestación de actividades no docentes de apoyo a los procesos o sistemas educativos:",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Otra educación",
+    "expected_iaf": 37
+  },
+  {
+    "query": "Educación terciaria",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las clases de arte",
+    "expected_iaf": 37
+  },
+  {
+    "query": "las actividades de asistencia social y orientación de niños y adolescentes",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las consultas y tratamientos realizados por médicos de medicina general",
+    "expected_iaf": 38
+  },
+  {
+    "query": "los centros residenciales de reinserción para personas con problemas sociales y personales",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades benéficas como la recaudación de fondos u otras actividades de apoyo a los servicios sociales",
+    "expected_iaf": 38
+  },
+  {
+    "query": "los servicios de los centros de planificación familiar que ofrecen tratamientos médicos como la esterilización o el",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades relacionadas con la salud humana no realizadas en hospitales o por doctores en medicina u",
+    "expected_iaf": 38
+  },
+  {
+    "query": "actividades de enfermeras, comadronas, fisioterapeutas u otros facultativos en el ámbito de la optometría,",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las reformatorios residenciales para jóvenes",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades de odontología general o especializada, por ejemplo, endodoncia y odontología pediátrica; las",
+    "expected_iaf": 38
+  },
+  {
+    "query": "los centros residenciales de reinserción para delincuentes",
+    "expected_iaf": 38
+  },
+  {
+    "query": "la rehabilitación ocupacional y la capacitación de personas desempleadas, siempre que el componente educativo",
+    "expected_iaf": 38
+  },
+  {
+    "query": "la determinación de las personas con derecho a recibir asistencia social, ayudas para el alquiler de viviendas o",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Otros actividades de servicios sociales sin alojamiento",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades realizadas por turnos y destinadas a prestar asistencia social a niños y a categorías especiales de",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades realizadas por personal paramédico de odontología como los higienistas dentales, que pueden no",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Actividades de cuidado diurno de niños",
+    "expected_iaf": 38
+  },
+  {
+    "query": "los centros de acogida temporal para las personas sin hogar",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades de control y cuidados médicos dispensados a animales de compañía",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Actividades de servicios sociales sin alojamiento",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades de los auxiliares de veterinaria u otro personal de apoyo en veterinaria",
+    "expected_iaf": 38
+  },
+  {
+    "query": "el transporte en ambulancia, incluido por avión. Estos servicios suelen prestarse durante una urgencia médica.",
+    "expected_iaf": 38
+  },
+  {
+    "query": "las actividades de:",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Asistencia en establecimientos residenciales",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Otros actividades de servicios sociales sin alojamiento n.c.o.p.",
+    "expected_iaf": 38
+  },
+  {
+    "query": "los centros de acogida y hogares infantiles",
+    "expected_iaf": 38
+  },
+  {
+    "query": "Actividades de creación, artísticas y espectáculos",
+    "expected_iaf": 39
+  },
+  {
+    "query": "las organizaciones de genealogía",
+    "expected_iaf": 39
+  },
+  {
+    "query": "clubes de atletismo",
+    "expected_iaf": 39
+  },
+  {
+    "query": "las actividades de lavado, corte, peinado, teñido, aplicación de mechas, ondulación y alisado del cabello y otras",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Lavado y limpieza de prendas textiles y de piel",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Otras servicios personales n.c.o.p.",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Otras actividades recreativas y de entretenimiento",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Otros servicios de información",
+    "expected_iaf": 39
+  },
+  {
+    "query": "los servicios de suministro de pañales",
+    "expected_iaf": 39
+  },
+  {
+    "query": "la limpieza de vertidos de petróleo y otros contaminantes en tierra, en aguas superficiales, en océanos y mares,",
+    "expected_iaf": 39
+  },
+  {
+    "query": "la explotación de agencias de apuestas hípicas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "las asociaciones con fines patrióticos, incluidas las asociaciones de veteranos de guerra",
+    "expected_iaf": 39
+  },
+  {
+    "query": "la descontaminación y limpieza de aguas superficiales tras una contaminación accidental, por ejemplo, por",
+    "expected_iaf": 39
+  },
+  {
+    "query": "el alquiler o venta de tumbas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "canchas de boxeo",
+    "expected_iaf": 39
+  },
+  {
+    "query": "clubes de fútbol",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Otras actividades asociativas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Peluquería y otros tratamientos de belleza",
+    "expected_iaf": 39
+  },
+  {
+    "query": "el mantenimiento y la limpieza de alcantarillas y desagües, incluido el desatasco de alcantarillas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Gestión de salas de espectáculos",
+    "expected_iaf": 39
+  },
+  {
+    "query": "los movimientos de protesta o las iniciativas cívicas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "las actividades de las organizaciones cuyos miembros se interesan principalmente por el desarrollo y la",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Otros servicios de información n.c.o.p.",
+    "expected_iaf": 39
+  },
+  {
+    "query": "Actividades de organizaciones políticas",
+    "expected_iaf": 39
+  },
+  {
+    "query": "las actividades de contratación de acompañantes, las actividades de las agencias de contactos y los servicios de",
+    "expected_iaf": 39
+  }
+]

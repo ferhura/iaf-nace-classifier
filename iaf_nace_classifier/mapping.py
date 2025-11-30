@@ -1,35 +1,91 @@
+import importlib.resources
 import json
 import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-# Archivo JSON oficial generado por el extractor
-DEFAULT_JSON = REPO_ROOT / "iaf_nace_mapeo_expandido.json"
-
-
 def load_mapping(path: Optional[str | Path] = None) -> List[Dict[str, Any]]:
     """Load IAF–NACE mapping JSON.
 
-    If path is None, loads from `iaf_nace_mapeo_expandido.json` at repo root.
+    If path is None, loads from `iaf_nace_mapeo_expandido.json` packaged with the library.
     Filters out obviously broken records (e.g., missing codigos_nace).
     """
-    p = Path(path) if path else DEFAULT_JSON
-    with p.open("r", encoding="utf-8") as f:
-        data = json.load(f)
+    if path:
+        p = Path(path)
+        with p.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:
+        ref = importlib.resources.files("iaf_nace_classifier") / "data" / "iaf_nace_mapeo_expandido.json"
+        with ref.open("r", encoding="utf-8") as f:
+            data = json.load(f)
 
     cleaned: List[Dict[str, Any]] = []
+    
+    # First pass: Collect all NACE descriptions for lookup
+    nace_lookup: Dict[str, str] = {}
+    for rec in data:
+        for nace_item in rec.get("descripcion_nace", []):
+            code = nace_item.get("codigo", "").strip()
+            desc = nace_item.get("descripcion", "")
+            if code:
+                nace_lookup[code] = desc
+
+    # Helper to extract exclusions
+    def _extract_exclusions(text: str) -> str:
+        text_lower = text.lower()
+        exclusions = []
+        if "excepto" in text_lower:
+            parts = text.split("excepto", 1)
+            if len(parts) > 1:
+                exclusions.append("excepto " + parts[1])
+        if "esta clase no comprende" in text_lower:
+            parts = text.split("esta clase no comprende", 1)
+            if len(parts) > 1:
+                exclusions.append("esta clase no comprende " + parts[1])
+        return " ".join(exclusions)
+
+    # Helper to get parent code (e.g., 16.2 -> 16, 16.21 -> 16.2)
+    def _get_parent_code(code: str) -> Optional[str]:
+        if "." in code:
+            parts = code.rsplit(".", 1)
+            return parts[0]
+        return None
+
+    # Second pass: Build cleaned list and propagate exclusions
     for rec in data:
         codigos = [c.strip() for c in rec.get("codigos_nace", []) if str(c).strip()]
         if not codigos:
-            # Skip entries without usable NACE codes
             continue
+            
+        # Process descriptions to add inherited exclusions
+        processed_descriptions = []
+        for nace_item in rec.get("descripcion_nace", []):
+            code = nace_item.get("codigo", "").strip()
+            desc = nace_item.get("descripcion", "")
+            
+            # Propagate from parent
+            parent = _get_parent_code(code)
+            while parent:
+                if parent in nace_lookup:
+                    parent_exclusions = _extract_exclusions(nace_lookup[parent])
+                    if parent_exclusions:
+                        # Append inherited exclusions to description so search.py picks them up
+                        desc += f"\n{parent_exclusions}"
+                    
+                parent = _get_parent_code(parent)
+            
+            processed_descriptions.append({
+                "codigo": code,
+                "descripcion": desc
+            })
+
         cleaned.append({
             "codigo_iaf": rec.get("codigo_iaf"),
             "nombre_iaf": rec.get("nombre_iaf"),
             "codigos_nace": codigos,
             "exclusiones": [str(e).strip() for e in rec.get("exclusiones", []) if str(e).strip()],
+            "descripcion_nace": processed_descriptions,
         })
     return cleaned
 

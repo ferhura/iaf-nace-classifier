@@ -3,7 +3,13 @@
 Ejemplo de uso programático de la búsqueda de actividades
 """
 
-from buscar_actividad import buscar_actividad
+import sys
+from pathlib import Path
+
+# Agregar el directorio raíz al path para poder importar el paquete
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from iaf_nace_classifier import buscar_actividad, classify_nace, load_mapping
 
 # Ejemplo 1: Buscar actividad de fabricación
 print("=" * 80)
@@ -41,8 +47,6 @@ if resultados:
     print(f"  Relevancia: {mejor['relevancia']:.1f}")
 
     # Ahora puedes usar este código NACE con el clasificador
-    from iaf_nace_classifier import classify_nace, load_mapping
-
     mapping = load_mapping()
     clasificacion = classify_nace(mejor['codigo_nace'], mapping)
     print(f"\n  Clasificación confirmada: {clasificacion}")

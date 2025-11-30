@@ -5,7 +5,7 @@ Dependencias:
   pip install fastapi uvicorn
 
 Ejecutar:
-  uvicorn api_server:app --reload
+  uvicorn iaf_nace_classifier.api:app --reload
 
 Endpoints:
   - GET /health
@@ -13,15 +13,27 @@ Endpoints:
   - POST /classify  body: {"code": "24.46"}
 """
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from pathlib import Path
 
-from iaf_nace_classifier import load_mapping, classify_nace
+from . import load_mapping, classify_nace
+from .search import buscar_actividad
 
 
 app = FastAPI(title="IAF–NACE Classifier API", version="0.1.0")
 
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins for now
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class ClassifyRequest(BaseModel):
     code: str
@@ -60,4 +72,22 @@ def classify_post(body: ClassifyRequest):
         raise HTTPException(status_code=404, detail="No match found")
     sector = _get_sector(MAPPING, res.get("codigo_iaf"))
     return {"input": body.code, "result": res, "sector": sector}
+
+
+@app.get("/search")
+def search(q: str = Query(..., min_length=2, description="Texto a buscar")):
+    """Busca códigos NACE por descripción de actividad."""
+    response = buscar_actividad(q, mapping=MAPPING, top_n=20)
+    return {
+        "query": q,
+        "results": response['results'],
+        "excluded": response['excluded']
+    }
+
+
+# Mount static files
+static_path = Path(__file__).parent.parent / "static"
+if static_path.exists():
+    app.mount("/", StaticFiles(directory=str(static_path), html=True), name="static")
+
 

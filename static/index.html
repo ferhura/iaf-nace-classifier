@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Códigos IAF/NACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Clasificador de actividades</h1>
+            <p class="subtitle">Encuentra el código NACE y sector IAF para tu empresa</p>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" id="searchInput"
+                        placeholder="Describe tu actividad (ej. 'fabricación de calzado', 'consultoría informática')..."
+                        autocomplete="off">
+                    <div id="loadingSpinner" class="spinner hidden"></div>
+                </div>
+            </div>
+        </header>
+
+        <main id="resultsContainer" class="results-grid">
+            <!-- Los resultados se inyectarán aquí -->
+            <div class="empty-state">
+                <p>Escribe una descripción para comenzar la búsqueda</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js?v=2"></script>
+</body>
+
+</html>

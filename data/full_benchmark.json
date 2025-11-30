@@ -1,0 +1,387 @@
+[
+    {
+        "query": "cultivo de cereales",
+        "category": "IAF 1",
+        "expected_iaf": 1
+    },
+    {
+        "query": "pesca en alta mar",
+        "category": "IAF 1",
+        "expected_iaf": 1
+    },
+    {
+        "query": "extracción de carbón",
+        "category": "IAF 2",
+        "expected_iaf": 2
+    },
+    {
+        "query": "extracción de petróleo crudo",
+        "category": "IAF 2",
+        "expected_iaf": 2
+    },
+    {
+        "query": "fabricación de productos cárnicos",
+        "category": "IAF 3",
+        "expected_iaf": 3
+    },
+    {
+        "query": "elaboración de vinos",
+        "category": "IAF 3",
+        "expected_iaf": 3
+    },
+    {
+        "query": "fabricación de tejidos textiles",
+        "category": "IAF 4",
+        "expected_iaf": 4
+    },
+    {
+        "query": "confección de ropa de trabajo",
+        "category": "IAF 4",
+        "expected_iaf": 4
+    },
+    {
+        "query": "curtido de cuero",
+        "category": "IAF 5",
+        "expected_iaf": 5
+    },
+    {
+        "query": "fabricación de bolsos de cuero",
+        "category": "IAF 5",
+        "expected_iaf": 5
+    },
+    {
+        "query": "aserrado de madera",
+        "category": "IAF 6",
+        "expected_iaf": 6
+    },
+    {
+        "query": "fabricación de hojas de madera",
+        "category": "IAF 6",
+        "expected_iaf": 6
+    },
+    {
+        "query": "fabricación de papel",
+        "category": "IAF 7",
+        "expected_iaf": 7
+    },
+    {
+        "query": "fabricación de cartón ondulado",
+        "category": "IAF 7",
+        "expected_iaf": 7
+    },
+    {
+        "query": "edición de periódicos",
+        "category": "IAF 8",
+        "expected_iaf": 8
+    },
+    {
+        "query": "edición de programas informáticos",
+        "category": "IAF 8",
+        "expected_iaf": 8
+    },
+    {
+        "query": "impresión de periódicos",
+        "category": "IAF 9",
+        "expected_iaf": 9
+    },
+    {
+        "query": "encuadernación",
+        "category": "IAF 9",
+        "expected_iaf": 9
+    },
+    {
+        "query": "fabricación de productos de refinación de petróleo",
+        "category": "IAF 10",
+        "expected_iaf": 10
+    },
+    {
+        "query": "fabricación de coque",
+        "category": "IAF 10",
+        "expected_iaf": 10
+    },
+    {
+        "query": "procesamiento de combustibles nucleares",
+        "category": "IAF 11",
+        "expected_iaf": 11
+    },
+    {
+        "query": "fabricación de pesticidas",
+        "category": "IAF 12",
+        "expected_iaf": 12
+    },
+    {
+        "query": "fabricación de pinturas y barnices",
+        "category": "IAF 12",
+        "expected_iaf": 12
+    },
+    {
+        "query": "fabricación de medicamentos",
+        "category": "IAF 13",
+        "expected_iaf": 13
+    },
+    {
+        "query": "fabricación de productos farmacéuticos",
+        "category": "IAF 13",
+        "expected_iaf": 13
+    },
+    {
+        "query": "fabricación de neumáticos",
+        "category": "IAF 14",
+        "expected_iaf": 14
+    },
+    {
+        "query": "fabricación de envases de plástico",
+        "category": "IAF 14",
+        "expected_iaf": 14
+    },
+    {
+        "query": "fabricación de vidrio plano",
+        "category": "IAF 15",
+        "expected_iaf": 15
+    },
+    {
+        "query": "fabricación de productos de cerámica",
+        "category": "IAF 15",
+        "expected_iaf": 15
+    },
+    {
+        "query": "fabricación de cemento",
+        "category": "IAF 16",
+        "expected_iaf": 16
+    },
+    {
+        "query": "fabricación de hormigón",
+        "category": "IAF 16",
+        "expected_iaf": 16
+    },
+    {
+        "query": "fundición de hierro",
+        "category": "IAF 17",
+        "expected_iaf": 17
+    },
+    {
+        "query": "fabricación de estructuras metálicas",
+        "category": "IAF 17",
+        "expected_iaf": 17
+    },
+    {
+        "query": "fabricación de motores y turbinas",
+        "category": "IAF 18",
+        "expected_iaf": 18
+    },
+    {
+        "query": "fabricación de maquinaria agrícola",
+        "category": "IAF 18",
+        "expected_iaf": 18
+    },
+    {
+        "query": "fabricación de ordenadores",
+        "category": "IAF 19",
+        "expected_iaf": 19
+    },
+    {
+        "query": "fabricación de equipos de comunicaciones",
+        "category": "IAF 19",
+        "expected_iaf": 19
+    },
+    {
+        "query": "construcción de barcos",
+        "category": "IAF 20",
+        "expected_iaf": 20
+    },
+    {
+        "query": "reparación de embarcaciones",
+        "category": "IAF 20",
+        "expected_iaf": 20
+    },
+    {
+        "query": "construcción aeronáutica y espacial",
+        "category": "IAF 21",
+        "expected_iaf": 21
+    },
+    {
+        "query": "reparación de aeronaves",
+        "category": "IAF 21",
+        "expected_iaf": 21
+    },
+    {
+        "query": "fabricación de vehículos de motor",
+        "category": "IAF 22",
+        "expected_iaf": 22
+    },
+    {
+        "query": "fabricación de carrocerías",
+        "category": "IAF 22",
+        "expected_iaf": 22
+    },
+    {
+        "query": "fabricación de muebles",
+        "category": "IAF 23",
+        "expected_iaf": 23
+    },
+    {
+        "query": "fabricación de joyas",
+        "category": "IAF 23",
+        "expected_iaf": 23
+    },
+    {
+        "query": "reciclaje de chatarra",
+        "category": "IAF 24",
+        "expected_iaf": 24
+    },
+    {
+        "query": "reciclaje de desperdicios",
+        "category": "IAF 24",
+        "expected_iaf": 24
+    },
+    {
+        "query": "producción de energía eléctrica",
+        "category": "IAF 25",
+        "expected_iaf": 25
+    },
+    {
+        "query": "transporte de energía eléctrica",
+        "category": "IAF 25",
+        "expected_iaf": 25
+    },
+    {
+        "query": "producción de gas",
+        "category": "IAF 26",
+        "expected_iaf": 26
+    },
+    {
+        "query": "distribución de combustibles gaseosos",
+        "category": "IAF 26",
+        "expected_iaf": 26
+    },
+    {
+        "query": "captación de agua",
+        "category": "IAF 27",
+        "expected_iaf": 27
+    },
+    {
+        "query": "distribución de agua",
+        "category": "IAF 27",
+        "expected_iaf": 27
+    },
+    {
+        "query": "construcción de edificios residenciales",
+        "category": "IAF 28",
+        "expected_iaf": 28
+    },
+    {
+        "query": "instalación eléctrica",
+        "category": "IAF 28",
+        "expected_iaf": 28
+    },
+    {
+        "query": "venta de automóviles",
+        "category": "IAF 29",
+        "expected_iaf": 29
+    },
+    {
+        "query": "comercio al por mayor de frutas",
+        "category": "IAF 29",
+        "expected_iaf": 29
+    },
+    {
+        "query": "hoteles y alojamientos",
+        "category": "IAF 30",
+        "expected_iaf": 30
+    },
+    {
+        "query": "restaurantes y puestos de comida",
+        "category": "IAF 30",
+        "expected_iaf": 30
+    },
+    {
+        "query": "transporte por ferrocarril",
+        "category": "IAF 31",
+        "expected_iaf": 31
+    },
+    {
+        "query": "transporte de mercancías por carretera",
+        "category": "IAF 31",
+        "expected_iaf": 31
+    },
+    {
+        "query": "intermediación monetaria",
+        "category": "IAF 32",
+        "expected_iaf": 32
+    },
+    {
+        "query": "alquiler de bienes inmobiliarios",
+        "category": "IAF 32",
+        "expected_iaf": 32
+    },
+    {
+        "query": "consultoría informática",
+        "category": "IAF 33",
+        "expected_iaf": 33
+    },
+    {
+        "query": "procesamiento de datos",
+        "category": "IAF 33",
+        "expected_iaf": 33
+    },
+    {
+        "query": "servicios de arquitectura",
+        "category": "IAF 34",
+        "expected_iaf": 34
+    },
+    {
+        "query": "ensayos y análisis técnicos",
+        "category": "IAF 34",
+        "expected_iaf": 34
+    },
+    {
+        "query": "actividades jurídicas",
+        "category": "IAF 35",
+        "expected_iaf": 35
+    },
+    {
+        "query": "servicios de limpieza de edificios",
+        "category": "IAF 35",
+        "expected_iaf": 35
+    },
+    {
+        "query": "administración pública",
+        "category": "IAF 36",
+        "expected_iaf": 36
+    },
+    {
+        "query": "defensa y seguridad social",
+        "category": "IAF 36",
+        "expected_iaf": 36
+    },
+    {
+        "query": "educación primaria",
+        "category": "IAF 37",
+        "expected_iaf": 37
+    },
+    {
+        "query": "educación universitaria",
+        "category": "IAF 37",
+        "expected_iaf": 37
+    },
+    {
+        "query": "actividades hospitalarias",
+        "category": "IAF 38",
+        "expected_iaf": 38
+    },
+    {
+        "query": "asistencia social residencial",
+        "category": "IAF 38",
+        "expected_iaf": 38
+    },
+    {
+        "query": "recogida de residuos",
+        "category": "IAF 39",
+        "expected_iaf": 39
+    },
+    {
+        "query": "actividades de bibliotecas",
+        "category": "IAF 39",
+        "expected_iaf": 39
+    }
+]

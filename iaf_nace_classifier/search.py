@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from .mapping import load_mapping
+from .data.risks import get_risks_for_iaf
 
 
 def normalizar_texto(texto: str) -> str:
@@ -22,6 +23,8 @@ def normalizar_texto(texto: str) -> str:
     Returns:
         Texto normalizado en minúsculas y sin acentos
     """
+    if not texto:
+        return ""
     texto = texto.lower()
     # Quitar acentos comunes
     replacements = {
@@ -213,6 +216,8 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
 
 def buscar_actividad(
     query: str,
+    actividades_reales: str = "",
+    procesos_criticos: str = "",
     mapping: Optional[List[Dict[str, Any]]] = None,
     mapping_path: Optional[str | Path] = None,
     top_n: int = 10
@@ -221,6 +226,8 @@ def buscar_actividad(
 
     Args:
         query: Descripción de la actividad (ej: "fabricación de muebles")
+        actividades_reales: Descripción de actividades reales (opcional)
+        procesos_criticos: Descripción de procesos críticos (opcional)
         mapping: Lista de sectores IAF cargada. Si None, se carga desde mapping_path
         mapping_path: Ruta al JSON de mapeo. Si None, usa el archivo por defecto
         top_n: Número máximo de resultados a retornar
@@ -234,14 +241,8 @@ def buscar_actividad(
         - codigo_iaf: sector IAF al que pertenece
         - nombre_iaf: nombre del sector IAF
         - relevancia: score de relevancia
+        - riesgos: lista de riesgos clave del sector
         - razon_exclusion (solo en 'excluded'): el segmento de exclusión que causó la penalización
-
-    Example:
-        >>> from iaf_nace_classifier.search import buscar_actividad
-        >>> resultados = buscar_actividad("fabricación de muebles", top_n=3)
-        >>> if resultados['results']:
-        ...     mejor = resultados['results'][0]
-        ...     print(f"NACE: {mejor['codigo_nace']}, IAF: {mejor['codigo_iaf']}")
     """
     # Cargar mapeo si no se proporciona
     if mapping is None:
@@ -256,9 +257,12 @@ def buscar_actividad(
     resultados = []
     excluidos = []  # Candidatos relevantes pero excluidos
 
+    # Combinar campos para la búsqueda
+    full_query_text = f"{query} {actividades_reales} {procesos_criticos}".strip()
+    
     # Detectar intención de la búsqueda
     # Usar texto normalizado para coincidir con las keywords (que no tienen acentos)
-    query_norm_intent = normalizar_texto(query)
+    query_norm_intent = normalizar_texto(full_query_text)
     
     intent_manufacturing = any(w in query_norm_intent for w in ['fabricacion', 'fabricación', 'fabrica', 'fábrica', 'produccion', 'producción', 'manufactura', 'elaboracion', 'elaboración', 'confeccion', 'confección'])
     intent_trade = any(w in query_norm_intent for w in ['comercio', 'venta', 'distribucion', 'distribución', 'tienda', 'almacen', 'almacén', 'mayor', 'menor'])
@@ -470,14 +474,15 @@ def buscar_actividad(
             expanded_query_words.append(SYNONYMS[word])
     
     # Reconstruir query expandida para el cálculo de relevancia
-    # Nota: No reemplazamos, agregamos. Así "reparación de computadoras" se convierte 
-    # efectivamente en "reparación de computadoras ordenadores", haciendo match con ambos.
     expanded_query = " ".join(expanded_query_words)
 
     # Buscar en todas las descripciones NACE
     for sector in mapping:
         codigo_iaf = sector.get('codigo_iaf')
         nombre_iaf = sector.get('nombre_iaf', '')
+        
+        # Obtener riesgos del sector
+        riesgos_sector = get_risks_for_iaf(codigo_iaf)
 
         for desc_obj in sector.get('descripcion_nace', []):
             codigo_nace = desc_obj.get('codigo')
@@ -521,6 +526,13 @@ def buscar_actividad(
                 intent_software = any(w in query_norm_intent for w in software_keywords)
                 
                 if intent_software:
+                    # BOOST a sectores IT reales para asegurar que ganen sobre coincidencias parciales
+                    # 62: Programación/Consultoría
+                    # 63: Servicios de información (Proceso de datos, portales web)
+                    # 58.2: Edición de software
+                    if nace_div in [62, 63] or codigo_nace.startswith('58.2'):
+                        score += 100.0
+
                     # Si es software, penalizar sectores puramente FÍSICOS que usan terminología similar
                     # 01-03: Agricultura/Pesca (ej: "granja" de servidores)
                     # 05-09: Minería (ej: "minería" de datos)
@@ -528,6 +540,7 @@ def buscar_actividad(
                     # 41-43: Construcción (ej: "construcción" de sitios web, "arquitectura" de software)
                     # 49-53: Transporte (ej: "navegación" web, "tráfico" de datos)
                     # 56: Servicios de comidas (ej: "alimentación")
+                    # 81: Servicios a edificios (ej: "limpieza" de virus, "mantenimiento" de software vs edificios)
                     
                     is_physical_sector = (
                         (1 <= nace_div <= 3) or
@@ -535,18 +548,8 @@ def buscar_actividad(
                         (10 <= nace_div <= 33 and nace_div != 26) or
                         (41 <= nace_div <= 43) or
                         (49 <= nace_div <= 53) or
-                        (nace_div == 56)
-                    )
-                    
-                if intent_software:
-                    # ... (existing software logic) ...
-                    is_physical_sector = (
-                        (1 <= nace_div <= 3) or
-                        (5 <= nace_div <= 9) or
-                        (10 <= nace_div <= 33 and nace_div != 26) or
-                        (41 <= nace_div <= 43) or
-                        (49 <= nace_div <= 53) or
-                        (nace_div == 56)
+                        (nace_div == 56) or
+                        (nace_div == 81) # Limpieza/Jardinería
                     )
                     
                     if is_physical_sector:
@@ -560,7 +563,7 @@ def buscar_actividad(
                         score -= 200.0
 
                 # PROTECCIÓN MÉDICA (Operación médica vs Operaciones financieras/negocios)
-                intent_medical = any(w in query_norm_intent for w in ['medico', 'medica', 'cirugia', 'operacion', 'paciente', 'hospital', 'clinica', 'salud', 'enfermeria'])
+                intent_medical = any(w in query_norm_intent for w in ['medico', 'medica', 'cirugia', 'operacion', 'paciente', 'hospital', 'clinica', 'salud', 'enfermeria', 'dolor'])
                 if intent_medical:
                     # Si es contexto médico, penalizar financiero/inmobiliario/negocios (64-70)
                     # "Operación" es muy común en negocios.
@@ -587,7 +590,8 @@ def buscar_actividad(
                         'descripcion_completa': descripcion,
                         'codigo_iaf': codigo_iaf,
                         'nombre_iaf': nombre_iaf,
-                        'relevancia': score
+                        'relevancia': score,
+                        'riesgos': riesgos_sector # Adjuntar riesgos
                     })
                 elif base_score > 100 and exclusion_hit:
                     # Si tenía buena puntuación base pero fue excluido por una cláusula específica
@@ -605,7 +609,6 @@ def buscar_actividad(
     resultados.sort(key=lambda x: x['relevancia'], reverse=True)
     excluidos.sort(key=lambda x: x['relevancia'], reverse=True)
 
-    # Filtrado Dinámico (Dynamic Thresholding) y Mínimo Absoluto
     # Filtrado Dinámico (Dynamic Thresholding) y Mínimo Absoluto
     MIN_SCORE_THRESHOLD = 20.0  # Umbral mínimo para considerar un resultado válido
     

@@ -1,207 +1,121 @@
 const searchInput = document.getElementById('searchInput');
-const resultsContainer = document.getElementById('resultsContainer');
+const activitiesInput = document.getElementById('activitiesInput');
+const processesInput = document.getElementById('processesInput');
+const resultsContainer = document.getElementById('results');
 const loadingSpinner = document.getElementById('loadingSpinner');
+const toggleBtn = document.getElementById('toggleAdvanced');
+const advancedInputs = document.getElementById('advancedInputs');
 
 let debounceTimer;
 
-searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.trim();
+// Toggle advanced inputs
+toggleBtn.addEventListener('click', () => {
+    advancedInputs.classList.toggle('hidden');
+    toggleBtn.textContent = advancedInputs.classList.contains('hidden')
+        ? 'Mostrar campos avanzados'
+        : 'Ocultar campos avanzados';
+});
 
-    clearTimeout(debounceTimer);
+// Event listeners for all inputs
+[searchInput, activitiesInput, processesInput].forEach(input => {
+    input.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(performSearch, 300);
+    });
+});
+
+async function performSearch() {
+    const query = searchInput.value.trim();
+    const activities = activitiesInput.value.trim();
+    const processes = processesInput.value.trim();
 
     if (query.length < 2) {
-        resultsContainer.innerHTML = `
-            <div class="empty-state">
-                <p>Escribe al menos 2 caracteres para buscar...</p>
-            </div>
-        `;
+        resultsContainer.innerHTML = '';
         return;
     }
 
     loadingSpinner.classList.remove('hidden');
 
-    debounceTimer = setTimeout(() => {
-        fetchResults(query);
-    }, 400); // 400ms debounce
-});
-
-async function fetchResults(query) {
     try {
-        const response = await fetch(`/search?q=${encodeURIComponent(query)}`);
+        // Use POST for advanced classification
+        const response = await fetch('/classify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                query: query,
+                actividades_reales: activities,
+                procesos_criticos: processes
+            })
+        });
+
         if (!response.ok) throw new Error('Error en la búsqueda');
 
         const data = await response.json();
-        // Support both old list format (just in case) and new dict format
-        const results = Array.isArray(data) ? data : (data.results || []);
-        const excluded = data.excluded || [];
-
-        renderResults(results, excluded, query);
+        renderResults(data);
     } catch (error) {
-        console.error(error);
-        resultsContainer.innerHTML = `
-            <div class="empty-state" style="color: #ef4444;">
-                <p>Ocurrió un error al buscar. Inténtalo de nuevo.</p>
-            </div>
-        `;
+        console.error('Error:', error);
+        resultsContainer.innerHTML = '<div class="error">Ocurrió un error al buscar. Inténtalo de nuevo.</div>';
     } finally {
         loadingSpinner.classList.add('hidden');
     }
 }
 
-function renderResults(results, excluded, query) {
-    if ((!results || results.length === 0) && (!excluded || excluded.length === 0)) {
-        resultsContainer.innerHTML = `
-            <div class="empty-state">
-                <p>No se encontraron resultados para "<strong>${escapeHtml(query)}</strong>"</p>
-            </div>
-        `;
+function renderResults(data) {
+    resultsContainer.innerHTML = '';
+
+    if (data.results.length === 0) {
+        resultsContainer.innerHTML = '<div class="no-results">No se encontraron resultados. Intenta con otros términos.</div>';
         return;
     }
 
-    let html = '';
+    data.results.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'result-card';
 
-    // 1. Render Valid Results
-    if (results && results.length > 0) {
-        // Agrupar resultados por código IAF preservando el orden de aparición
-        const groups = [];
-        const groupsMap = new Map();
+        // Determinar clase de relevancia
+        let relevanceClass = 'low';
+        if (item.relevancia >= 80) relevanceClass = 'high';
+        else if (item.relevancia >= 50) relevanceClass = 'medium';
 
-        results.forEach(item => {
-            if (!groupsMap.has(item.codigo_iaf)) {
-                const group = {
-                    iaf_code: item.codigo_iaf,
-                    iaf_name: item.nombre_iaf,
-                    items: []
-                };
-                groupsMap.set(item.codigo_iaf, group);
-                groups.push(group);
+        // Procesar exclusiones para mostrar (usando descripción completa)
+        let exclusionNote = '';
+        if (item.descripcion_completa && item.descripcion_completa.includes('Esta clase no comprende:')) {
+            const parts = item.descripcion_completa.split('Esta clase no comprende:');
+            if (parts.length > 1) {
+                // Tomar los primeros 200 caracteres de la exclusión para no saturar
+                const exclusionText = parts[1].trim().substring(0, 200) + (parts[1].length > 200 ? '...' : '');
+                exclusionNote = `<div class="exclusion-note">⚠️ <strong>Nota:</strong> No incluye: ${exclusionText}</div>`;
             }
-            groupsMap.get(item.codigo_iaf).items.push(item);
-        });
+        }
 
-        html += groups.map(group => {
-            const itemsHtml = group.items.map(item => {
-                const percentage = Math.min(100, Math.max(10, (item.relevancia / 350) * 100));
-                const highlightedDesc = highlightTerms(item.descripcion_nace, query);
-
-                // Exclusions within valid results (warnings)
-                let exclusionHtml = '';
-                // Use full description to find exclusions, even if truncated in display
-                const fullDesc = item.descripcion_completa || item.descripcion_nace;
-                const lowerFullDesc = fullDesc.toLowerCase();
-
-                if (lowerFullDesc.includes('excepto') || lowerFullDesc.includes('no comprende')) {
-                    let exclusionText = '';
-                    if (lowerFullDesc.includes('excepto')) {
-                        exclusionText = fullDesc.substring(lowerFullDesc.indexOf('excepto'));
-                    } else if (lowerFullDesc.includes('no comprende')) {
-                        exclusionText = fullDesc.substring(lowerFullDesc.indexOf('no comprende'));
-                    }
-
-                    // Clean up: Remove leading "Esta clase " if present before "no comprende"
-                    // (The substring above starts at "no comprende", so this is just for safety/formatting)
-
-                    if (exclusionText.length > 200) exclusionText = exclusionText.substring(0, 200) + '...';
-
-                    exclusionHtml = `
-                        <div class="exclusion-box">
-                            <strong>⚠️ Nota:</strong> ${escapeHtml(exclusionText)}
-                        </div>
-                    `;
-                }
-
-                return `
-                    <div class="nace-item">
-                        <div class="nace-header">
-                            <span class="nace-code-large">NACE ${item.codigo_nace}</span>
-                            <div class="score-bar-container" title="Relevancia: ${item.relevancia.toFixed(1)}">
-                                <div class="score-bar" style="width: ${percentage}%"></div>
-                            </div>
-                        </div>
-                        <p class="description">${highlightedDesc}</p>
-                        ${exclusionHtml}
-                    </div>
-                `;
-            }).join('');
-
-            return `
-                <div class="iaf-group">
-                    <div class="iaf-info">
-                        <span class="badge-iaf">IAF ${group.iaf_code}</span>
-                        <h3>${escapeHtml(group.iaf_name)}</h3>
-                    </div>
-                    <div class="nace-list">
-                        ${itemsHtml}
-                    </div>
+        // Renderizar Riesgos
+        let risksHtml = '';
+        if (item.riesgos && item.riesgos.length > 0) {
+            risksHtml = `
+                <div class="risks-container">
+                    <h4>⚠️ Riesgos Clave del Sector:</h4>
+                    <ul>
+                        ${item.riesgos.map(risk => `<li>${risk}</li>`).join('')}
+                    </ul>
                 </div>
             `;
-        }).join('');
-    }
+        }
 
-    // 2. Render Excluded Results
-    if (excluded && excluded.length > 0) {
-        html += `
-            <div class="excluded-section">
-                <h3 class="excluded-title">Sectores Analizados pero Excluidos</h3>
-                <p class="excluded-subtitle">Estos sectores coinciden con tu búsqueda pero contienen exclusiones específicas.</p>
-                <div class="excluded-grid">
-        `;
-
-        html += excluded.map(item => {
-            return `
-                <div class="card excluded-card">
-                    <div class="card-header">
-                        <span class="badge-iaf badge-excluded">IAF ${item.codigo_iaf}</span>
-                        <span class="nace-code">NACE ${item.codigo_nace}</span>
-                    </div>
-                    <div class="card-body">
-                        <p class="description" style="margin-bottom: 0.5rem;">${escapeHtml(item.descripcion_nace)}</p>
-                        <div class="exclusion-reason">
-                            <strong>⛔ Excluido por:</strong> "${escapeHtml(item.razon_exclusion)}"
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-
-        html += `
-                </div>
+        card.innerHTML = `
+            <div class="result-header">
+                <div class="nace-code">${item.codigo_nace}</div>
+                <div class="relevance-badge ${relevanceClass}">${Math.round(item.relevancia)}% Coincidencia</div>
             </div>
+            <div class="nace-description">${item.descripcion_nace}</div>
+            ${exclusionNote}
+            <div class="iaf-info">
+                <span class="iaf-label">Sector IAF:</span>
+                <span class="iaf-value">${item.codigo_iaf} - ${item.nombre_iaf}</span>
+            </div>
+            ${risksHtml}
         `;
-    }
-
-    resultsContainer.innerHTML = html;
-}
-
-function escapeHtml(text) {
-    if (!text) return '';
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-function highlightTerms(text, query) {
-    if (!query || !text) return text;
-
-    const terms = query.split(/\s+/).filter(t => t.length > 2);
-    if (terms.length === 0) return text;
-
-    let highlighted = text;
-    // Ordenar términos por longitud descendente para evitar reemplazos anidados incorrectos
-    terms.sort((a, b) => b.length - a.length);
-
-    terms.forEach(term => {
-        // Regex simple para case-insensitive replace
-        const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
-        highlighted = highlighted.replace(regex, '<span class="highlight">$1</span>');
+        resultsContainer.appendChild(card);
     });
-
-    return highlighted;
-}
-
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

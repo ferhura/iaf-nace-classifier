@@ -8,44 +8,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
     <div class="container">
         <header class="hero">
             <h1>Clasificador de actividades</h1>
-            <p class="subtitle">Encuentra el código NACE y sector IAF para tu empresa</p>
+            <p class="subtitle">Ingresa la actividad principal de la empresa. Si necesitas mayor precisión, añade
+                detalles específicos y procesos.</p>
 
             <div class="search-container">
                 <div class="search-box-group">
                     <div class="input-group">
-                        <label for="searchInput">Descripción del cliente</label>
+                        <label for="searchInput">Actividad principal</label>
                         <div class="search-box">
                             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
-                            <input type="text" id="searchInput" placeholder="Ej. 'fabricación de calzado'..."
-                                autocomplete="off">
+                            <input type="text" id="searchInput"
+                                placeholder="Ej. Fabricación de calzado, desarrollo de software..." autocomplete="off">
                         </div>
                     </div>
 
                     <div class="advanced-inputs hidden" id="advancedInputs">
                         <div class="input-group">
-                            <label for="activitiesInput">Actividades reales (Opcional)</label>
+                            <label for="activitiesInput">Actividades específicas (Opcional)</label>
                             <input type="text" id="activitiesInput" class="secondary-input"
-                                placeholder="Ej. 'corte, cosido, pegado de suelas'...">
+                                placeholder="Ej. Corte, cosido, pegado de suelas...">
                         </div>
                         <div class="input-group">
-                            <label for="processesInput">Procesos críticos (Opcional)</label>
+                            <label for="processesInput">Procesos o tecnologías clave (Opcional)</label>
                             <input type="text" id="processesInput" class="secondary-input"
-                                placeholder="Ej. 'uso de adhesivos solventes'...">
+                                placeholder="Ej. Uso de adhesivos, vulcanizado, agile...">
                         </div>
                     </div>
 
-                    <button id="toggleAdvanced" class="toggle-btn">Mostrar campos avanzados</button>
+                    <button id="toggleAdvanced" class="toggle-btn">Añadir más detalles</button>
                     <div id="loadingSpinner" class="spinner hidden"></div>
                 </div>
             </div>
@@ -59,7 +60,7 @@
         </main>
     </div>
 
-    <script src="app.js?v=2"></script>
+    <script src="/static/app.js?v=10"></script>
 </body>
 
 </html>

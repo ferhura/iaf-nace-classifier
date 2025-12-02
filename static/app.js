@@ -1,7 +1,7 @@
 const searchInput = document.getElementById('searchInput');
 const activitiesInput = document.getElementById('activitiesInput');
 const processesInput = document.getElementById('processesInput');
-const resultsContainer = document.getElementById('results');
+const resultsContainer = document.getElementById('resultsContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
 const toggleBtn = document.getElementById('toggleAdvanced');
 const advancedInputs = document.getElementById('advancedInputs');
@@ -12,8 +12,8 @@ let debounceTimer;
 toggleBtn.addEventListener('click', () => {
     advancedInputs.classList.toggle('hidden');
     toggleBtn.textContent = advancedInputs.classList.contains('hidden')
-        ? 'Mostrar campos avanzados'
-        : 'Ocultar campos avanzados';
+        ? 'Añadir más detalles'
+        : 'Ocultar detalles';
 });
 
 // Event listeners for all inputs
@@ -29,7 +29,9 @@ async function performSearch() {
     const activities = activitiesInput.value.trim();
     const processes = processesInput.value.trim();
 
-    if (query.length < 2) {
+    console.log("Search triggered:", { query, activities, processes });
+
+    if (query.length < 2 && activities.length < 2 && processes.length < 2) {
         resultsContainer.innerHTML = '';
         return;
     }
@@ -53,10 +55,19 @@ async function performSearch() {
         if (!response.ok) throw new Error('Error en la búsqueda');
 
         const data = await response.json();
+        console.log("API Response:", data);
+
+        if (!data || !data.results) {
+            throw new Error('Respuesta inválida del servidor');
+        }
+
         renderResults(data);
     } catch (error) {
-        console.error('Error:', error);
-        resultsContainer.innerHTML = '<div class="error">Ocurrió un error al buscar. Inténtalo de nuevo.</div>';
+        console.error('Error details:', error);
+        resultsContainer.innerHTML = `<div class="error">
+            <p>Ocurrió un error al buscar.</p>
+            <small>${error.message}</small>
+        </div>`;
     } finally {
         loadingSpinner.classList.add('hidden');
     }
@@ -84,9 +95,10 @@ function renderResults(data) {
         if (item.descripcion_completa && item.descripcion_completa.includes('Esta clase no comprende:')) {
             const parts = item.descripcion_completa.split('Esta clase no comprende:');
             if (parts.length > 1) {
+                const fullExclusionText = parts[1].trim();
                 // Tomar los primeros 200 caracteres de la exclusión para no saturar
-                const exclusionText = parts[1].trim().substring(0, 200) + (parts[1].length > 200 ? '...' : '');
-                exclusionNote = `<div class="exclusion-note">⚠️ <strong>Nota:</strong> No incluye: ${exclusionText}</div>`;
+                const truncatedText = fullExclusionText.substring(0, 200) + (fullExclusionText.length > 200 ? '...' : '');
+                exclusionNote = `<div class="exclusion-note" data-tooltip="${fullExclusionText.replace(/"/g, '&quot;')}">⚠️ <strong>Nota:</strong> No incluye: ${truncatedText}</div>`;
             }
         }
 
@@ -95,7 +107,7 @@ function renderResults(data) {
         if (item.riesgos && item.riesgos.length > 0) {
             risksHtml = `
                 <div class="risks-container">
-                    <h4>⚠️ Riesgos Clave del Sector:</h4>
+                    <h4>⚠️ Riesgos clave del sector:</h4>
                     <ul>
                         ${item.riesgos.map(risk => `<li>${risk}</li>`).join('')}
                     </ul>
@@ -106,7 +118,7 @@ function renderResults(data) {
         card.innerHTML = `
             <div class="result-header">
                 <div class="nace-code">${item.codigo_nace}</div>
-                <div class="relevance-badge ${relevanceClass}">${Math.round(item.relevancia)}% Coincidencia</div>
+                <div class="relevance-badge ${relevanceClass}">${Math.min(100, Math.round(item.relevancia))}% Coincidencia</div>
             </div>
             <div class="nace-description">${item.descripcion_nace}</div>
             ${exclusionNote}

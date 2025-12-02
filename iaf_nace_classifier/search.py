@@ -259,10 +259,16 @@ def buscar_actividad(
 
     # Combinar campos para la búsqueda
     full_query_text = f"{query} {actividades_reales} {procesos_criticos}".strip()
+    query_norm_full = normalizar_texto(full_query_text)
     
     # Detectar intención de la búsqueda
     # Usar texto normalizado para coincidir con las keywords (que no tienen acentos)
-    query_norm_intent = normalizar_texto(full_query_text)
+    # IMPORTANTE: La intención se deriva PRINCIPALMENTE de la descripción principal (query).
+    # Los otros campos son de apoyo, pero no deben cambiar la categoría base (ej: "software" en procesos no hace que sea una empresa de software).
+    if query and query.strip():
+        query_norm_intent = normalizar_texto(query)
+    else:
+        query_norm_intent = query_norm_full
     
     intent_manufacturing = any(w in query_norm_intent for w in ['fabricacion', 'fabricación', 'fabrica', 'fábrica', 'produccion', 'producción', 'manufactura', 'elaboracion', 'elaboración', 'confeccion', 'confección'])
     intent_trade = any(w in query_norm_intent for w in ['comercio', 'venta', 'distribucion', 'distribución', 'tienda', 'almacen', 'almacén', 'mayor', 'menor'])
@@ -465,8 +471,8 @@ def buscar_actividad(
     'universitaria': 'educacion',
     }
 
-    # Expansión de consulta con sinónimos
-    query_words = query_norm_intent.split()
+    # Expansión de consulta con sinónimos (Usamos query_norm_full para incluir keywords de todos los campos)
+    query_words = query_norm_full.split()
     expanded_query_words = []
     for word in query_words:
         expanded_query_words.append(word)

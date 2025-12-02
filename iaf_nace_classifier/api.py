@@ -98,15 +98,15 @@ def classify_post(body: UnifiedRequest):
         return {"input": body.code, "result": res, "sector": sector}
     
     # Caso 2: Búsqueda avanzada
-    if body.query:
+    if body.query or body.actividades_reales or body.procesos_criticos:
         return buscar_actividad(
-            query=body.query,
-            actividades_reales=body.actividades_reales,
-            procesos_criticos=body.procesos_criticos,
+            query=body.query or "",
+            actividades_reales=body.actividades_reales or "",
+            procesos_criticos=body.procesos_criticos or "",
             mapping=MAPPING
         )
         
-    raise HTTPException(status_code=400, detail="Must provide either 'code' or 'query'")
+    raise HTTPException(status_code=400, detail="Must provide either 'code', 'query', 'actividades_reales' or 'procesos_criticos'")
 
 @app.get("/search")
 def search(q: str = Query(..., min_length=2, description="Texto a buscar")):

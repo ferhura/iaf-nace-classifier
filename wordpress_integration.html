@@ -1,5 +1,5 @@
-<!-- 
-GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
+<!--
+GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO IDENTICO A RAILWAY)
 
 1. Copia este código.
 2. En tu página de WordPress, añade un bloque de "HTML Personalizado" (Custom HTML) o "Code Block" (Avada).
@@ -7,18 +7,48 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
 4. IMPORTANTE: La variable 'API_URL' ya está configurada para producción.
 -->
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-    /* Estilos encapsulados con prefijo #iaf-widget para no romper tu tema */
+    /* Reset y Estilos Base encapsulados */
     #iaf-widget {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         max-width: 800px;
-        margin: 2rem auto;
+        margin: 0 auto;
         color: #1e293b;
         line-height: 1.5;
+        font-size: 16px;
+        /* Forzar tamaño base para evitar que WP lo haga pequeño */
+        background-color: transparent;
     }
 
     #iaf-widget * {
         box-sizing: border-box;
+    }
+
+    /* Hero / Header Section */
+    #iaf-widget .hero {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    #iaf-widget h1 {
+        font-size: 2.5rem;
+        /* 40px */
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+        margin-top: 0;
+    }
+
+    #iaf-widget .subtitle {
+        color: #64748b;
+        font-size: 1.125rem;
+        /* 18px */
+        margin-bottom: 3rem;
+        font-weight: 400;
     }
 
     /* Search Container */
@@ -29,6 +59,9 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         border: 1px solid rgba(255, 255, 255, 0.5);
         margin-bottom: 2rem;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #iaf-widget .input-group {
@@ -36,6 +69,7 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         flex-direction: column;
         gap: 0.5rem;
         margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     #iaf-widget label {
@@ -79,6 +113,14 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         outline: none;
         color: #1e293b;
         font-family: inherit;
+        height: auto;
+        /* Prevenir conflictos con temas de WP */
+        line-height: 1.5;
+    }
+
+    #iaf-widget input::placeholder {
+        color: #94a3b8;
+        opacity: 1;
     }
 
     /* Advanced Inputs */
@@ -91,6 +133,7 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         background: #f8fafc;
         transition: all 0.2s ease;
         color: #1e293b;
+        font-family: inherit;
     }
 
     #iaf-widget .secondary-input:focus {
@@ -136,6 +179,7 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         display: block;
         margin: 0 auto;
         transition: color 0.2s;
+        font-family: inherit;
     }
 
     #iaf-widget .toggle-btn:hover {
@@ -148,6 +192,8 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        max-width: 650px;
+        margin: 0 auto;
     }
 
     #iaf-widget .result-card {
@@ -158,6 +204,7 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
         transition: all 0.2s ease;
         animation: iafFadeIn 0.4s ease-out;
+        text-align: left;
     }
 
     @keyframes iafFadeIn {
@@ -239,7 +286,30 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         border-radius: 8px;
         border: 1px solid #fcd34d;
         line-height: 1.4;
+        cursor: help;
+        position: relative;
     }
+
+    #iaf-widget .exclusion-note:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #1e293b;
+        color: white;
+        padding: 0.75rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        width: 300px;
+        max-width: 90vw;
+        white-space: normal;
+        z-index: 100;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        margin-bottom: 0.5rem;
+        pointer-events: none;
+    }
+
 
     #iaf-widget .iaf-info {
         display: flex;
@@ -304,6 +374,17 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
         display: none;
     }
 
+    /* Responsive */
+    @media (max-width: 640px) {
+        #iaf-widget h1 {
+            font-size: 2rem;
+        }
+
+        #iaf-widget .search-container {
+            padding: 1.5rem;
+        }
+    }
+
     @keyframes iafSpin {
         to {
             transform: rotate(360deg);
@@ -312,6 +393,12 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
 </style>
 
 <div id="iaf-widget">
+    <div class="hero">
+        <h1>Clasificador de actividades</h1>
+        <p class="subtitle">Ingresa la actividad principal de la empresa. Si necesitas mayor precisión, añade detalles
+            específicos y procesos.</p>
+    </div>
+
     <div class="search-container">
         <div class="input-group">
             <label for="iaf-search-input">Actividad principal</label>
@@ -424,7 +511,7 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO PREMIUM)
                     if (parts.length > 1) {
                         const fullExclusionText = parts[1].trim();
                         const truncatedText = fullExclusionText.substring(0, 200) + (fullExclusionText.length > 200 ? '...' : '');
-                        exclusionNote = `<div class="exclusion-note">⚠️ <strong>Nota:</strong> No incluye: ${truncatedText}</div>`;
+                        exclusionNote = `<div class="exclusion-note" data-tooltip="${fullExclusionText.replace(/"/g, '&quot;')}">⚠️ <strong>Nota:</strong> No incluye: ${truncatedText}</div>`;
                     }
                 }
 

@@ -450,6 +450,36 @@ def buscar_actividad(
         'botas': 'calzado',
         'sandalias': 'calzado',
         'tenis': 'calzado',
+
+        # Variaciones de fabricación
+        'fabrica': 'fabricacion',
+        'fábrica': 'fabricacion',
+        'manufactura': 'fabricacion',
+        'produccion': 'fabricacion',
+        'elaboracion': 'fabricacion',
+        'confeccion': 'fabricacion',
+
+        # Nuevos sinónimos verificados
+        'gasolinera': 'combustible',
+        'farmacia': 'farmaceuticos',
+        'imprenta': 'impresion',
+        'constructora': 'construccion',
+        'casas': 'edificios',
+        'dental': 'odontologicas',
+        'dentista': 'odontologicas',
+        'salon': 'peluqueria',
+        'belleza': 'peluqueria',
+        'gimnasio': 'deportivas',
+        'gym': 'deportivas',
+        'fitness': 'deportivas',
+        'taller': 'mantenimiento',
+        'mecanico': 'vehiculos',
+        'despacho': 'juridicas',
+        'bufete': 'juridicas',
+        'consultorio': 'medica',
+        'carga': 'mercancias',
+        'transporte': 'transporte',
+        'camion': 'carretera',
     }
 
     # NO expandimos la query concatenando strings.

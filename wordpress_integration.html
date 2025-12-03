@@ -390,13 +390,31 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO IDENTICO A RAILWAY)
             transform: rotate(360deg);
         }
     }
+
+    #iaf-widget .disclaimer {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e2e8f0;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        text-align: center;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
+    }
 </style>
 
 <div id="iaf-widget">
     <div class="hero">
         <h1>Clasificador de actividades</h1>
-        <p class="subtitle">Ingresa la actividad principal de la empresa. Si necesitas mayor precisión, añade detalles
-            específicos y procesos.</p>
+        <p class="subtitle">
+            Ingresa la actividad principal para obtener los <strong>códigos NACE</strong> coincidentes y su
+            <strong>sector IAF</strong> correspondiente.
+            <br>
+            <span style="font-size: 0.9em; opacity: 0.9;">Si necesitas mayor precisión, añade detalles específicos y
+                procesos.</span>
+        </p>
     </div>
 
     <div class="search-container">
@@ -431,6 +449,12 @@ GUÍA DE INTEGRACIÓN PARA WORDPRESS (DISEÑO IDENTICO A RAILWAY)
     </div>
 
     <div id="iaf-results" class="results-grid"></div>
+
+    <div class="disclaimer">
+        <p><strong>Aviso Legal:</strong> Esta herramienta es de carácter informativo. La asignación final del código
+            NACE y sector IAF debe ser verificada por el usuario contrastando con la documentación oficial vigente
+            (Reglamento NACE y Documentos Mandatorios IAF).</p>
+    </div>
 </div>
 
 <script>

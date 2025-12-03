@@ -483,6 +483,84 @@ def buscar_actividad(
         'renta': 'alquiler',
         'alquiler': 'alquiler',
         'arrendamiento': 'alquiler',
+
+        # Salud
+        'doctor': 'medica',
+        'medico': 'medica',
+        'enfermera': 'sanitarias',
+        'pediatra': 'medica',
+        'cirujano': 'medica',
+        'psicologo': 'sanitarias',
+        'ambulancia': 'sanitarias',
+
+        # Legal / Profesional
+        'contador': 'contabilidad',
+        'gestoria': 'contabilidad',
+        'auditoria': 'contabilidad',
+        'arquitecto': 'arquitectura',
+        'ingeniero': 'ingenieria',
+        'diseñador': 'diseño',
+        'fotografo': 'fotografia',
+
+        # Oficios / Construcción
+        'plomero': 'fontaneria',
+        'fontanero': 'fontaneria',
+        'pintor': 'pintura',
+        'albañil': 'construccion',
+        'carpintero': 'carpinteria',
+
+        # Retail / Comercio
+        'supermercado': 'comercio',
+        'abarrotes': 'comercio',
+        'tienda': 'comercio',
+        'carniceria': 'carne',
+        'fruteria': 'frutas',
+        'zapateria': 'calzado',
+        'floristeria': 'plantas',
+        'ferreteria': 'ferreteria',
+
+        # Comida / Hospitalidad
+        'pub': 'bebidas',
+        'discoteca': 'bebidas',
+        'antro': 'bebidas',
+        'puesto': 'comidas',
+        'tacos': 'comidas',
+        'catering': 'comidas',
+
+        # Tech
+        'startup': 'informatica',
+        'hosting': 'datos',
+        'datacenter': 'datos',
+
+        # Educación
+        'kinder': 'preprimaria',
+        'primaria': 'primaria',
+        'secundaria': 'secundaria',
+        'ingles': 'idiomas',
+        'idioma': 'idiomas',
+        'clases': 'enseñanza',
+        'curso': 'enseñanza',
+        'autoescuela': 'conduccion',
+
+        # Transporte
+        'taxi': 'terrestre',
+        'uber': 'terrestre',
+        'didi': 'terrestre',
+        'cabify': 'terrestre',
+        'flete': 'mudanza',
+        'mudanza': 'mudanza',
+
+        # Inmobiliaria
+        'inmobiliaria': 'inmobiliarias',
+        'bienes': 'inmobiliarias',
+        'raices': 'inmobiliarias',
+        'administracion': 'inmobiliarias',
+        'edificios': 'inmobiliarias', # Contexto de administración
+
+        # Servicios
+        'jardineria': 'jardineria',
+        'detective': 'seguridad', # Mejor que investigacion (R&D)
+        'seguridad': 'seguridad',
     }
 
     # NO expandimos la query concatenando strings.

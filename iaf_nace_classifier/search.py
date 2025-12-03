@@ -8,7 +8,7 @@ descripciones de actividades empresariales usando búsqueda por relevancia.
 import json
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Set
 
 from .mapping import load_mapping
 from .data.risks import get_risks_for_iaf
@@ -38,28 +38,31 @@ def normalizar_texto(texto: str) -> str:
     return texto
 
 
-def calcular_relevancia(query: str, descripcion: str) -> float:
+def calcular_relevancia(query: str, descripcion: str, synonyms: Dict[str, str] = None) -> float:
     """Calcula un score de relevancia entre la query y la descripción.
 
     El score se basa en:
     - Coincidencia exacta de frase: +100 puntos
-    - Palabras clave individuales: +5 a +10 puntos cada una
+    - Palabras clave individuales (o sus sinónimos): +5 a +15 puntos cada una
     - Densidad de coincidencias: +0 a +20 puntos
 
     Args:
-        query: Texto de búsqueda
+        query: Texto de búsqueda (normalizado)
         descripcion: Descripción NACE donde buscar
+        synonyms: Diccionario de sinónimos {palabra: sinonimo}
 
     Returns:
         Score de relevancia (mayor = más relevante)
     """
-    # Normalizar texto
+    if synonyms is None:
+        synonyms = {}
+
+    # Normalizar texto descripción
     desc_norm = normalizar_texto(descripcion)
-    query_norm = normalizar_texto(query)
+    # query ya viene normalizada desde buscar_actividad
+    query_norm = query
     
     # Detectar exclusiones explícitas
-    # Solo usamos frases que indican claramente el inicio de una sección de exclusión.
-    # Evitamos "excepto" o "excluye" porque pueden aparecer en medio de frases descriptivas.
     exclusion_phrases = [
         'esta clase no comprende', 
         'este grupo no comprende', 
@@ -98,7 +101,7 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
         'comercio', 'venta', 'distribucion', 'tienda', 'almacen', 'mayor', 'menor',
         'reparacion', 'mantenimiento', 'instalacion',
         'servicios', 'actividades', 'construccion', 'trabajos',
-        'productos', 'articulos', 'bienes', 'materiales', 'equipos', 'maquinas', 'sistemas',
+        'productos', 'articulos', 'bienes', 'materiales', 'equipos', 'maquinas', 'maquinaria', 'sistemas',
         'industrial', 'industriales'
     }
 
@@ -107,49 +110,87 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
             return 0.0
             
         local_score = 0.0
+        words_found_count = 0
         
         # Palabras clave
         for palabra in palabras_query:
+            match_found = False
+            term_to_score = palabra
+            
+            # 1. Buscar palabra exacta
             if palabra in text_norm:
-                base_points = 15.0  # Puntos base aumentados para palabras específicas
+                match_found = True
+            
+            # 2. Buscar sinónimo (si no se encontró la exacta)
+            elif palabra in synonyms:
+                synonym = synonyms[palabra]
+                if synonym in text_norm:
+                    match_found = True
+                    term_to_score = synonym # Puntuar basado en el sinónimo si es lo que encontramos
+            
+            if match_found:
+                words_found_count += 1
+                base_points = 15.0  # Puntos base
                 
-                if palabra in GENERIC_TERMS:
-                    base_points = 2.0  # Puntos reducidos para palabras genéricas
+                # Si el término encontrado es genérico, dar menos puntos
+                if term_to_score in GENERIC_TERMS:
+                    base_points = 2.0
                 
-                if re.search(r'\b' + re.escape(palabra) + r'\b', text_norm):
+                # Bonus por palabra completa (boundary)
+                # Buscamos tanto la palabra original como el sinónimo si aplica
+                regex_pattern = r'\b' + re.escape(term_to_score) + r'\b'
+                if re.search(regex_pattern, text_norm):
                     local_score += base_points
                 else:
                     local_score += base_points * 0.5
 
-        # Densidad
-        palabras_encontradas = sum(1 for p in palabras_query if p in text_norm)
+        # Densidad (basada en palabras originales de la query)
         if len(palabras_query) > 0:
-            densidad = palabras_encontradas / len(palabras_query)
+            densidad = words_found_count / len(palabras_query)
             local_score += densidad * 20.0
 
         # Frases (bigramas)
-        # Generar bigramas solo de palabras significativas (sin stopwords)
-        # Esto evita que "fabricación de" sume puntos, pero permite que "fabricación muebles" sí lo haga.
-        
-        # Palabras significativas del texto (normalizado)
+        # Generar bigramas del texto
         text_words = [p for p in re.findall(r'\w+', text_norm) if len(p) > 2 and p not in stopwords]
         text_bigrams = set()
         if len(text_words) > 1:
             for i in range(len(text_words) - 1):
                 text_bigrams.add(f"{text_words[i]} {text_words[i+1]}")
 
-        # Palabras significativas de la query (ya las tenemos en palabras_query)
+        # Bigramas de la query
         if len(palabras_query) > 1:
             for i in range(len(palabras_query) - 1):
-                bigram = f"{palabras_query[i]} {palabras_query[i+1]}"
+                w1 = palabras_query[i]
+                w2 = palabras_query[i+1]
                 
-                if bigram in text_bigrams:
+                # Combinaciones posibles:
+                # 1. w1 + w2 (Exacto)
+                # 2. syn(w1) + w2
+                # 3. w1 + syn(w2)
+                # 4. syn(w1) + syn(w2)
+                
+                candidates = []
+                candidates.append(f"{w1} {w2}")
+                if w1 in synonyms: candidates.append(f"{synonyms[w1]} {w2}")
+                if w2 in synonyms: candidates.append(f"{w1} {synonyms[w2]}")
+                if w1 in synonyms and w2 in synonyms: candidates.append(f"{synonyms[w1]} {synonyms[w2]}")
+                
+                match_bigram = False
+                matched_candidate = ""
+                
+                for cand in candidates:
+                    if cand in text_bigrams:
+                        match_bigram = True
+                        matched_candidate = cand
+                        break
+                
+                if match_bigram:
                     # Verificar si el bigram está compuesto solo por términos genéricos
-                    w1, w2 = bigram.split()
-                    if w1 in GENERIC_TERMS and w2 in GENERIC_TERMS:
-                         local_score += 5.0 # Muy poco valor si ambos son genéricos
+                    cw1, cw2 = matched_candidate.split()
+                    if cw1 in GENERIC_TERMS and cw2 in GENERIC_TERMS:
+                         local_score += 5.0
                     else:
-                         local_score += 30.0  # Bonus alto para frases específicas
+                         local_score += 30.0
         
         return local_score * weight
 
@@ -159,13 +200,8 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
     exclusion_hit = None
 
     # Penalización por exclusiones
-    # Si una palabra clave aparece en la sección de exclusión, penalizar fuertemente
     if exclusion_text:
-        # Analizar palabras de la exclusión
         exclusion_words = [p for p in re.findall(r'\w+', exclusion_text) if len(p) > 2 and p not in stopwords]
-        
-        # Crear segmentos de exclusión (separados por comas o 'y')
-        # Esto es una aproximación. Lo ideal sería un análisis sintáctico más profundo.
         segmentos = re.split(r'[,;]|\by\b', exclusion_text)
         
         for segmento in segmentos:
@@ -173,40 +209,24 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
             if not seg_words:
                 continue
                 
-            # Verificar si TODAS las palabras significativas del segmento están en la query
-            # Ejemplo: "excepto muebles de madera". Si query es "muebles madera", penalizar.
-            # Si query es solo "muebles", NO penalizar (porque podría ser muebles de metal).
-            # PERO: Si el segmento es solo una palabra "excepto muebles", entonces sí penalizar.
-            
             query_words_set = set(palabras_query)
+            # Añadir sinónimos al set de query para la comprobación de exclusión
+            for q in palabras_query:
+                if q in synonyms:
+                    query_words_set.add(synonyms[q])
             
-            # HEURÍSTICA DE CONTRADICCIÓN:
-            # Si el segmento de exclusión está contenido completamente en la parte "positiva" del título,
-            # ignorarlo. Esto sucede cuando el título dice "Fabricación de X" y la exclusión dice
-            # "Fabricación de X (tipo específico)".
-            
-            # 1. Obtener parte positiva del título (antes de "excepto")
-            # Nota: title_norm ya está normalizado
             positive_title = title_norm.split('excepto')[0]
             positive_title_words = set(p for p in re.findall(r'\w+', positive_title) if len(p) > 2 and p not in stopwords)
             
-            # 2. Verificar si el segmento de exclusión es un subset del título positivo
-            # Si seg_words es subset de positive_title_words, significa que estamos excluyendo
-            # algo que el propio título afirma ser. En este contexto, la exclusión suele ser
-            # una refinación ("...de frutas, excepto frutas confitadas") y no una negación total.
-            # Por tanto, si la query coincide con el título general, NO debemos penalizar.
             if set(seg_words).issubset(positive_title_words):
                 continue
 
-            # Caso especial: Si el segmento tiene 1 sola palabra significativa, penalizar si está en query
             if len(seg_words) == 1:
                 if seg_words[0] in query_words_set:
                     score -= 200.0
                     exclusion_hit = segmento.strip()
                     break
             
-            # Caso general: Subset match
-            # Si el usuario busca "fabricación de muebles de madera" y la exclusión es "muebles de madera", penalizar.
             if set(seg_words).issubset(query_words_set):
                 score -= 200.0
                 exclusion_hit = segmento.strip()
@@ -235,37 +255,21 @@ def buscar_actividad(
 
     Returns:
         Diccionario con dos listas: 'results' (resultados principales) y 'excluded' (candidatos excluidos).
-        Cada elemento en las listas es un diccionario con:
-        - codigo_nace: código NACE encontrado
-        - descripcion_nace: descripción truncada del código
-        - descripcion_completa: descripción completa del código
-        - codigo_iaf: sector IAF al que pertenece
-        - nombre_iaf: nombre del sector IAF
-        - relevancia: score de relevancia
-        - riesgos: lista de riesgos clave del sector
-        - razon_exclusion (solo en 'excluded'): el segmento de exclusión que causó la penalización
     """
-    # Cargar mapeo si no se proporciona
     if mapping is None:
         if mapping_path is None:
-            # Usar el archivo por defecto del paquete
             mapping = load_mapping()
         else:
-            # Cargar desde archivo JSON directamente
             with open(mapping_path, 'r', encoding='utf-8') as f:
                 mapping = json.load(f)
 
     resultados = []
-    excluidos = []  # Candidatos relevantes pero excluidos
+    excluidos = []
 
     # Combinar campos para la búsqueda
     full_query_text = f"{query} {actividades_reales} {procesos_criticos}".strip()
     query_norm_full = normalizar_texto(full_query_text)
     
-    # Detectar intención de la búsqueda
-    # Usar texto normalizado para coincidir con las keywords (que no tienen acentos)
-    # IMPORTANTE: La intención se deriva PRINCIPALMENTE de la descripción principal (query).
-    # Los otros campos son de apoyo, pero no deben cambiar la categoría base (ej: "software" en procesos no hace que sea una empresa de software).
     if query and query.strip():
         query_norm_intent = normalizar_texto(query)
     else:
@@ -274,7 +278,6 @@ def buscar_actividad(
     intent_manufacturing = any(w in query_norm_intent for w in ['fabricacion', 'fabricación', 'fabrica', 'fábrica', 'produccion', 'producción', 'manufactura', 'elaboracion', 'elaboración', 'confeccion', 'confección'])
     intent_trade = any(w in query_norm_intent for w in ['comercio', 'venta', 'distribucion', 'distribución', 'tienda', 'almacen', 'almacén', 'mayor', 'menor'])
 
-    # Diccionario de sinónimos para expansión de consulta
     SYNONYMS = {
         'computadora': 'ordenador',
         'computadoras': 'ordenadores',
@@ -321,7 +324,7 @@ def buscar_actividad(
         'hostal': 'alojamiento',
         'turismo': 'agencias',
         'viajes': 'agencias',
-        'reciclaje': 'valorizacion', # NACE usa "valorización" para reciclaje
+        'reciclaje': 'valorizacion',
         'reciclar': 'valorizacion',
         'chatarra': 'desechos',
         'desperdicios': 'desechos',
@@ -332,199 +335,150 @@ def buscar_actividad(
         'joyas': 'joyeria',
         'joya': 'joyeria',
         'digital': 'graficas',
-    'sorting': 'clasificacion',
-    'scrap': 'chatarra',
-    'waste': 'residuos',
-    'aparthoteles': 'hoteles',
-    'cervecerias': 'bares', # Para asociar impresión digital con artes gráficas (IAF 9)
-    'notaria': 'notarios',
-    'notario': 'notarios',
-    'abogado': 'juridicas',
-    'abogados': 'juridicas',
-    'bufete': 'juridicas',
-    'maquinados': 'mecanica',
-    'maquinado': 'mecanica',
-    'mecanizado': 'mecanica',
-    
-    # IT / Digital
-    'saas': 'informatica',
-    'cloud': 'informatica',
-    'ecommerce': 'internet', # Maps to 47.91 via 'internet' (usually) or trade logic
-    'ciberseguridad': 'informatica',
-    'blockchain': 'informatica',
-    'bigdata': 'datos',
-    'desarrollador': 'programacion',
-    'programador': 'programacion',
-    
-    # Marketing
-    'seo': 'publicidad',
-    'sem': 'publicidad',
-    'community': 'publicidad', # Community manager
-    
-    # Logística
-    'picking': 'almacenamiento',
-    'packing': 'envasado',
-    'delivery': 'correos', # 53.20 "actividades postales y de correos"
-    'rider': 'correos',
-    'paqueteria': 'postal',
-    'envios': 'postal',
-    
-    # Construcción
-    'pladur': 'revocamiento',
-    'drywall': 'revocamiento',
-    'albañileria': 'construccion',
-    'reformas': 'construccion',
-    
-    # Energía
-    'fotovoltaica': 'electrica',
-    'solar': 'electrica',
-    'eolica': 'electrica',
-    'biomasa': 'electrica',
-    'renovables': 'electrica',
-    
-    # Servicios
-    'callcenter': 'llamadas',
-    'contactcenter': 'llamadas',
-    'coworking': 'inmobiliarias', # 68.20
-    
-    # Nuevos Sinónimos Globales (Auditoría Completa)
-    # IAF 1-3 (Primario/Alimentación)
-    'agrotech': 'agricultura',
-    'hidroponia': 'cultivos',
-    'mineria': 'extraccion',
-    'excavacion': 'extraccion',
-    'aridos': 'grava',
-    'snacks': 'alimenticios',
-    'vegan': 'alimenticios',
-    'gourmet': 'alimenticios',
-    
-    # IAF 4-9 (Manufactura Ligera / Papel / Media)
-    'moda': 'confeccion',
-    'fashion': 'confeccion',
-    'ebanisteria': 'muebles',
-    'aserradero': 'aserrado',
-    'packaging': 'envases',
-    'periodismo': 'agencias', # 63.91 Agencias de noticias
-    'rotulacion': 'impresion',
-    '3d': 'impresion',
-    
-    # IAF 10-16 (Química / Plástico / Minerales)
-    'cosmetica': 'perfumes',
-    'perfumeria': 'perfumes',
-    'biotech': 'investigacion', # 72.11
-    'laboratorio': 'ensayos', # 71.20
-    'polimeros': 'plasticos',
-    'prefabricados': 'hormigon',
-    
-    # IAF 17-23 (Metal / Maquinaria / Transporte)
-    'cnc': 'mecanica',
-    'torneria': 'mecanica',
-    'caldereria': 'estructuras',
-    'robotica': 'maquinaria',
-    'automatizacion': 'maquinaria',
-    'chips': 'componentes',
-    'sensores': 'instrumentos',
-    'astillero': 'barcos',
-    'yates': 'barcos',
-    'drones': 'aeronautica', # 30.30
-    'trenes': 'ferroviario',
-    
-    # IAF 24-27 (Reciclaje / Energía / Agua)
-    'chatarreria': 'residuos', # 38
-    'biogas': 'gas',
-    'depuradora': 'alcantarillado',
-    
-    # IAF 28-32 (Construcción / Comercio / Transporte / Finanzas)
-    'electricista': 'instalaciones',
-    'retail': 'menor', # Comercio al por menor (47)
-    'concesionario': 'vehiculos',
-    'taller': 'mantenimiento',
-    'hosteleria': 'restaurantes',
-    'turismo': 'agencias', # Agencias de viaje
-    'mudanzas': 'transporte',
-    'fintech': 'financieros',
-    
-    # IAF 33-39 (Servicios Profesionales / Públicos / Sociales)
-    'devops': 'informatica',
-    'agile': 'consultoria',
-    'project': 'consultoria', # Project management
-    'facility': 'limpieza', # Facility management (often cleaning/maintenance)
-    'ayuntamiento': 'publica',
-    'elearning': 'educacion', # 85
-    'bootcamp': 'educacion',
-    'master': 'educacion',
-    'fisioterapia': 'sanitarias',
-    'estetica': 'belleza',
-    'wellness': 'fisico', # 96.04 Bienestar físico
-    'ong': 'asociativas', # 94
-    'fundacion': 'asociativas',
-    'voluntariado': 'social',
-    
-    # Decoración / Navidad
-    'navidad': 'regalo',
-    'navideñas': 'regalo',
-    'navidenas': 'regalo',
-    'adornos': 'regalo',
-    'decoracion': 'regalo',
-    
-    # Ambigüedad / Otros
-    'dolor': 'medicina',
-    'universitaria': 'educacion',
+        'sorting': 'clasificacion',
+        'scrap': 'chatarra',
+        'waste': 'residuos',
+        'aparthoteles': 'hoteles',
+        'cervecerias': 'bares',
+        'notaria': 'notarios',
+        'notario': 'notarios',
+        'abogado': 'juridicas',
+        'abogados': 'juridicas',
+        'bufete': 'juridicas',
+        'maquinados': 'mecanica',
+        'maquinado': 'mecanica',
+        'mecanizado': 'mecanica',
+        'saas': 'informatica',
+        'cloud': 'informatica',
+        'ecommerce': 'internet',
+        'ciberseguridad': 'informatica',
+        'blockchain': 'informatica',
+        'bigdata': 'datos',
+        'desarrollador': 'programacion',
+        'programador': 'programacion',
+        'seo': 'publicidad',
+        'sem': 'publicidad',
+        'community': 'publicidad',
+        'picking': 'almacenamiento',
+        'packing': 'envasado',
+        'delivery': 'correos',
+        'rider': 'correos',
+        'paqueteria': 'postal',
+        'envios': 'postal',
+        'pladur': 'revocamiento',
+        'drywall': 'revocamiento',
+        'albañileria': 'construccion',
+        'reformas': 'construccion',
+        'fotovoltaica': 'electrica',
+        'solar': 'electrica',
+        'eolica': 'electrica',
+        'biomasa': 'electrica',
+        'renovables': 'electrica',
+        'callcenter': 'llamadas',
+        'contactcenter': 'llamadas',
+        'coworking': 'inmobiliarias',
+        'agrotech': 'agricultura',
+        'hidroponia': 'cultivos',
+        'mineria': 'extraccion',
+        'excavacion': 'extraccion',
+        'aridos': 'grava',
+        'snacks': 'alimenticios',
+        'vegan': 'alimenticios',
+        'gourmet': 'alimenticios',
+        'moda': 'confeccion',
+        'fashion': 'confeccion',
+        'ebanisteria': 'muebles',
+        'aserradero': 'aserrado',
+        'packaging': 'envases',
+        'periodismo': 'agencias',
+        'rotulacion': 'impresion',
+        '3d': 'impresion',
+        'cosmetica': 'perfumes',
+        'perfumeria': 'perfumes',
+        'biotech': 'investigacion',
+        'laboratorio': 'ensayos',
+        'polimeros': 'plasticos',
+        'prefabricados': 'hormigon',
+        'cnc': 'mecanica',
+        'torneria': 'mecanica',
+        'caldereria': 'estructuras',
+        'robotica': 'maquinaria',
+        'automatizacion': 'maquinaria',
+        'chips': 'componentes',
+        'sensores': 'instrumentos',
+        'astillero': 'barcos',
+        'yates': 'barcos',
+        'drones': 'aeronautica',
+        'trenes': 'ferroviario',
+        'chatarreria': 'residuos',
+        'biogas': 'gas',
+        'depuradora': 'alcantarillado',
+        'electricista': 'instalaciones',
+        'retail': 'menor',
+        'concesionario': 'vehiculos',
+        'taller': 'mantenimiento',
+        'hosteleria': 'restaurantes',
+        'turismo': 'agencias',
+        'mudanzas': 'transporte',
+        'fintech': 'financieros',
+        'devops': 'informatica',
+        'agile': 'consultoria',
+        'project': 'consultoria',
+        'facility': 'limpieza',
+        'ayuntamiento': 'publica',
+        'elearning': 'educacion',
+        'bootcamp': 'educacion',
+        'master': 'educacion',
+        'fisioterapia': 'sanitarias',
+        'estetica': 'belleza',
+        'wellness': 'fisico',
+        'ong': 'asociativas',
+        'fundacion': 'asociativas',
+        'voluntariado': 'social',
+        'navidad': 'regalo',
+        'navideñas': 'regalo',
+        'navidenas': 'regalo',
+        'adornos': 'regalo',
+        'decoracion': 'regalo',
+        'dolor': 'medicina',
+        'universitaria': 'educacion',
     }
 
-    # Expansión de consulta con sinónimos (Usamos query_norm_full para incluir keywords de todos los campos)
-    query_words = query_norm_full.split()
-    expanded_query_words = []
-    for word in query_words:
-        expanded_query_words.append(word)
-        if word in SYNONYMS:
-            expanded_query_words.append(SYNONYMS[word])
-    
-    # Reconstruir query expandida para el cálculo de relevancia
-    expanded_query = " ".join(expanded_query_words)
+    # NO expandimos la query concatenando strings.
+    # Pasamos el mapa de sinónimos a calcular_relevancia para que lo use inteligentemente.
 
-    # Buscar en todas las descripciones NACE
     for sector in mapping:
         codigo_iaf = sector.get('codigo_iaf')
         nombre_iaf = sector.get('nombre_iaf', '')
-        
-        # Obtener riesgos del sector
         riesgos_sector = get_risks_for_iaf(codigo_iaf)
 
         for desc_obj in sector.get('descripcion_nace', []):
             codigo_nace = desc_obj.get('codigo')
             descripcion = desc_obj.get('descripcion', '')
 
-            # Usar la query expandida para el cálculo
-            score, base_score, exclusion_hit = calcular_relevancia(expanded_query, descripcion)
+            # Pasamos query_norm_full (texto original normalizado) y los sinónimos
+            score, base_score, exclusion_hit = calcular_relevancia(query_norm_full, descripcion, synonyms=SYNONYMS)
             
             if score > 0 or (base_score > 50 and exclusion_hit):
-                # Ajuste por intención
-                # Extraer división NACE (primeros 2 dígitos)
                 try:
                     nace_div = int(codigo_nace.split('.')[0])
                 except (ValueError, IndexError):
                     nace_div = 0
 
-                # Lógica de Manufactura (Divisiones 10-33)
                 if intent_manufacturing:
                     if 10 <= nace_div <= 33:
-                        pass  # No boost global para evitar ruido (confiamos en los pesos específicos)
+                        pass
                     elif 45 <= nace_div <= 47:
-                        score -= 200.0  # Penalización fuerte a comercio
+                        score -= 200.0
                     elif nace_div < 10:
-                        score -= 50.0 # Penalización leve a agricultura/minería si se busca fabricación
+                        score -= 50.0
 
-                # Lógica de Comercio (Divisiones 45-47)
                 elif intent_trade:
                     if 45 <= nace_div <= 47:
-                        score += 50.0  # Boost comercio (aquí sí tiene sentido ayudar)
+                        score += 50.0
                     elif 10 <= nace_div <= 33:
-                        score -= 200.0  # Penalización fuerte a manufactura
+                        score -= 200.0
 
-                # PROTECCIÓN DE CONTEXTO DIGITAL (Global)
-                # Si la query tiene intención digital clara, penalizar sectores físicos que usan metáforas
-                # Palabras que cambian el contexto físico a digital
                 software_keywords = [
                     'software', 'programacion', 'informatica', 'computadora', 'ordenador', 
                     'app', 'web', 'digital', 'datos', 'sistema', 'red', 'servidor', 'cloud', 'nube',
@@ -533,22 +487,9 @@ def buscar_actividad(
                 intent_software = any(w in query_norm_intent for w in software_keywords)
                 
                 if intent_software:
-                    # BOOST a sectores IT reales para asegurar que ganen sobre coincidencias parciales
-                    # 62: Programación/Consultoría
-                    # 63: Servicios de información (Proceso de datos, portales web)
-                    # 58.2: Edición de software
                     if nace_div in [62, 63] or codigo_nace.startswith('58.2'):
                         score += 100.0
 
-                    # Si es software, penalizar sectores puramente FÍSICOS que usan terminología similar
-                    # 01-03: Agricultura/Pesca (ej: "granja" de servidores)
-                    # 05-09: Minería (ej: "minería" de datos)
-                    # 10-33: Manufactura (ej: "fábrica" de software, "alimentación" de datos) -> Excepto 26 (Hardware)
-                    # 41-43: Construcción (ej: "construcción" de sitios web, "arquitectura" de software)
-                    # 49-53: Transporte (ej: "navegación" web, "tráfico" de datos)
-                    # 56: Servicios de comidas (ej: "alimentación")
-                    # 81: Servicios a edificios (ej: "limpieza" de virus, "mantenimiento" de software vs edificios)
-                    
                     is_physical_sector = (
                         (1 <= nace_div <= 3) or
                         (5 <= nace_div <= 9) or
@@ -556,37 +497,28 @@ def buscar_actividad(
                         (41 <= nace_div <= 43) or
                         (49 <= nace_div <= 53) or
                         (nace_div == 56) or
-                        (nace_div == 81) # Limpieza/Jardinería
+                        (nace_div == 81)
                     )
                     
                     if is_physical_sector:
                         score -= 200.0
 
-                # PROTECCIÓN DE SERVICIOS PERSONALES (Peluquería vs Corte de piedra/metal)
                 intent_personal = any(w in query_norm_intent for w in ['pelo', 'cabello', 'peluqueria', 'estetica', 'belleza', 'manicura'])
                 if intent_personal:
-                    # Penalizar manufactura y construcción (ej: "corte" de piedra)
                     if (10 <= nace_div <= 33) or (41 <= nace_div <= 43):
                         score -= 200.0
 
-                # PROTECCIÓN MÉDICA (Operación médica vs Operaciones financieras/negocios)
                 intent_medical = any(w in query_norm_intent for w in ['medico', 'medica', 'cirugia', 'operacion', 'paciente', 'hospital', 'clinica', 'salud', 'enfermeria', 'dolor'])
                 if intent_medical:
-                    # Si es contexto médico, penalizar financiero/inmobiliario/negocios (64-70)
-                    # "Operación" es muy común en negocios.
                     if 64 <= nace_div <= 70:
                         score -= 200.0
-                    # Penalizar también manufactura (salvo farmacéutica 21 y equipos médicos 26/32)
                     if 10 <= nace_div <= 33 and nace_div not in [21, 26, 32]:
                         score -= 50.0
 
-                # PROTECCIÓN DECORACIÓN / NAVIDAD (Esferas navideñas vs Esferas de reloj)
                 intent_decoration = any(w in query_norm_intent for w in ['navidad', 'navideñas', 'navidenas', 'adornos', 'decoracion', 'fiesta', 'regalo'])
                 if intent_decoration:
-                    # Penalizar relojes (26.52) porque "esferas" es un componente de reloj
                     if codigo_nace == '26.52':
                         score -= 200.0
-                    # Boost a Otras industrias manufactureras (32.99) que incluye artículos de fiesta/regalo
                     if codigo_nace == '32.99':
                         score += 50.0
 
@@ -598,31 +530,26 @@ def buscar_actividad(
                         'codigo_iaf': codigo_iaf,
                         'nombre_iaf': nombre_iaf,
                         'relevancia': score,
-                        'riesgos': riesgos_sector # Adjuntar riesgos
+                        'riesgos': riesgos_sector
                     })
                 elif base_score > 100 and exclusion_hit:
-                    # Si tenía buena puntuación base pero fue excluido por una cláusula específica
                     excluidos.append({
                         'codigo_nace': codigo_nace,
                         'descripcion_nace': descripcion[:300] + '...' if len(descripcion) > 300 else descripcion,
                         'descripcion_completa': descripcion,
                         'codigo_iaf': codigo_iaf,
                         'nombre_iaf': nombre_iaf,
-                        'relevancia': base_score, # Guardamos el score base para mostrar qué tan relevante era
+                        'relevancia': base_score,
                         'razon_exclusion': exclusion_hit
                     })
 
-    # Ordenar por relevancia (mayor a menor)
     resultados.sort(key=lambda x: x['relevancia'], reverse=True)
     excluidos.sort(key=lambda x: x['relevancia'], reverse=True)
 
-    # Filtrado Dinámico (Dynamic Thresholding) y Mínimo Absoluto
-    MIN_SCORE_THRESHOLD = 20.0  # Umbral mínimo para considerar un resultado válido
+    MIN_SCORE_THRESHOLD = 20.0
     
     if resultados:
         max_score = resultados[0]['relevancia']
-        
-        # Si el mejor resultado es muy pobre, no devolver nada
         if max_score < MIN_SCORE_THRESHOLD:
             resultados = []
         else:
@@ -631,5 +558,5 @@ def buscar_actividad(
 
     return {
         'results': resultados[:top_n],
-        'excluded': excluidos[:3] # Solo mostrar los top 3 excluidos para no saturar
+        'excluded': excluidos[:3]
     }

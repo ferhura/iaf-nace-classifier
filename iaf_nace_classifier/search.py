@@ -98,7 +98,8 @@ def calcular_relevancia(query: str, descripcion: str) -> float:
         'comercio', 'venta', 'distribucion', 'tienda', 'almacen', 'mayor', 'menor',
         'reparacion', 'mantenimiento', 'instalacion',
         'servicios', 'actividades', 'construccion', 'trabajos',
-        'productos', 'articulos', 'bienes', 'materiales', 'equipos', 'maquinas', 'sistemas'
+        'productos', 'articulos', 'bienes', 'materiales', 'equipos', 'maquinas', 'sistemas',
+        'industrial', 'industriales'
     }
 
     def _calc_score(text_norm, weight=1.0):

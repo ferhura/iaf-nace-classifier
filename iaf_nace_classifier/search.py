@@ -442,6 +442,14 @@ def buscar_actividad(
         'decoracion': 'regalo',
         'dolor': 'medicina',
         'universitaria': 'educacion',
+    
+        # Calzado / Zapatos
+        'zapatos': 'calzado',
+        'zapato': 'calzado',
+        'zapatillas': 'calzado',
+        'botas': 'calzado',
+        'sandalias': 'calzado',
+        'tenis': 'calzado',
     }
 
     # NO expandimos la query concatenando strings.

@@ -480,6 +480,9 @@ def buscar_actividad(
         'carga': 'mercancias',
         'transporte': 'transporte',
         'camion': 'carretera',
+        'renta': 'alquiler',
+        'alquiler': 'alquiler',
+        'arrendamiento': 'alquiler',
     }
 
     # NO expandimos la query concatenando strings.

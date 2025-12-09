@@ -100,7 +100,7 @@ def calcular_relevancia(query: str, descripcion: str, synonyms: Dict[str, str] =
         'fabricacion', 'produccion', 'manufactura', 'elaboracion', 'confeccion',
         'comercio', 'venta', 'distribucion', 'tienda', 'almacen', 'mayor', 'menor',
         'reparacion', 'mantenimiento', 'instalacion',
-        'servicios', 'actividades', 'construccion', 'trabajos',
+        'servicios', 'actividades', 'construccion', 'trabajos', 'prestacion',
         'productos', 'articulos', 'bienes', 'materiales', 'equipos', 'maquinas', 'maquinaria', 'sistemas',
         'industrial', 'industriales'
     }
@@ -492,6 +492,11 @@ def buscar_actividad(
         'cirujano': 'medica',
         'psicologo': 'sanitarias',
         'ambulancia': 'sanitarias',
+        'diagnostico': 'medica',
+        'tratamiento': 'medica',
+        'rehabilitacion': 'sanitarias',
+        'terapia': 'sanitarias',
+        'neurorehabilitacion': 'sanitarias',
 
         # Legal / Profesional
         'contador': 'contabilidad',
@@ -627,7 +632,7 @@ def buscar_actividad(
                     if (10 <= nace_div <= 33) or (41 <= nace_div <= 43):
                         score -= 200.0
 
-                intent_medical = any(w in query_norm_intent for w in ['medico', 'medica', 'cirugia', 'operacion', 'paciente', 'hospital', 'clinica', 'salud', 'enfermeria', 'dolor'])
+                intent_medical = any(w in query_norm_intent for w in ['medico', 'medica', 'cirugia', 'operacion', 'paciente', 'hospital', 'clinica', 'salud', 'enfermeria', 'dolor', 'diagnostico', 'tratamiento', 'rehabilitacion', 'terapia', 'psicologia', 'psiquiatria', 'trastorno'])
                 if intent_medical:
                     if 64 <= nace_div <= 70:
                         score -= 200.0

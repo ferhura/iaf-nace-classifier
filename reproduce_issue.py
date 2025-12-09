@@ -1,34 +1,37 @@
-import requests
-import json
 
-def test_search():
-    url = "http://127.0.0.1:8000/classify"
-    payload = {
-        "query": "construcción",
-        "actividades_reales": "albañilería",
-        "procesos_criticos": ""
-    }
-    headers = {'Content-Type': 'application/json'}
+import sys
+import logging
+from iaf_nace_classifier.search import buscar_actividad, normalizar_texto, calcular_relevancia, load_mapping
+
+# Setup logging to see what's happening if needed
+logging.basicConfig(level=logging.DEBUG)
+
+def reproduce():
+    query = "Prestación de servicios de diagnóstico y tratamiento para trastornos del sueño y neurorehabilitación"
+    print(f"Query: {query}")
     
-    try:
-        print(f"Sending POST to {url} with payload: {payload}")
-        response = requests.post(url, json=payload, headers=headers)
-        print(f"Status Code: {response.status_code}")
+    # Load mapping
+    mapping = load_mapping()
+    
+    # Run search
+    result = buscar_actividad(query, mapping=mapping, top_n=20)
+    
+    print("\n--- Top Results ---")
+    for res in result['results']:
+        print(f"I: {res['codigo_iaf']} | N: {res['codigo_nace']} | Score: {res['relevancia']:.2f}")
+        print(f"   Desc: {res['descripcion_nace'][:100]}...")
         
-        if response.status_code == 200:
-            data = response.json()
-            print("Response JSON keys:", data.keys())
-            if 'results' in data:
-                print(f"Results found: {len(data['results'])}")
-                if len(data['results']) > 0:
-                    print("First result:", data['results'][0])
-            else:
-                print("No 'results' key in response!")
-        else:
-            print("Error response:", response.text)
-            
-    except Exception as e:
-        print(f"Request failed: {e}")
+    # Inspect descriptions for key sectors
+    print("\n--- Target NACE Descriptions ---")
+    
+    target_codes = ['84.2', '86.10', '86.21', '86.22', '86.90']
+    
+    for sector in mapping:
+        for desc_obj in sector.get('descripcion_nace', []):
+            code = desc_obj.get('codigo')
+            if code in target_codes:
+                print(f"\nCode: {code}")
+                print(f"Desc: {desc_obj.get('descripcion')}")
 
 if __name__ == "__main__":
-    test_search()
+    reproduce()
